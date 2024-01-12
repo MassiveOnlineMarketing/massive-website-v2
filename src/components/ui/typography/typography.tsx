@@ -1,7 +1,7 @@
 import * as React from "react";
 import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
-import { constants } from "@/styles/styles";
+import { styles } from "@/styles/styles";
  
 // Types for Heading
 export type HeadingProps = VariantProps<typeof headingVariants> &
@@ -65,6 +65,7 @@ export const headingVariants = cva(
                 white: "text-white",
 
                 'gradient-primary': 'text-gradient-primary',
+                'gradient-fade-primary': 'text-fade-primary-gradient',
             },
             type: {
                 icon: 'flex gap-[10px] items-center'
@@ -99,8 +100,8 @@ export const subHeadingVariants = cva(
                 'gradient-primary': 'text-gradient-primary',
                 
                 // Pill variant
-                'glass' : `${constants.glassStroke} ${constants.glassFill}`, 
-                'glass-dark': `text-gray-50 ${constants.darkStroke} ${constants.darkFill}`
+                'glass' : `${styles.glass}`, 
+                'glass-dark': `text-gray-50 ${styles.darkGlass} `
             },
             variant: {
                 rounded: "rounded-full",
@@ -129,6 +130,7 @@ export const highlightVariants = cva(
                 muted: "text-gray-600 dark:text-gray-400",
                 accent: "text-indigo-600 dark:text-indigo-400",
                 'gradient-primary': 'text-gradient-primary',
+                'gradient-fade-primary': 'text-fade-primary-gradient',
             },
         },
     }

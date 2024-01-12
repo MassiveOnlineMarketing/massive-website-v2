@@ -74,6 +74,12 @@ module.exports = {
           'background-clip': 'text',
           '-webkit-background-clip': 'text',
           '-webkit-text-fill-color': 'transparent',
+        },
+        '.text-fade-primary-gradient': {
+          background: 'var(--Cool, linear-gradient(180deg, #7857FF 30.26%, #9076FC 38.82%, #C6B8FF 81.58%))',
+          'background-clip': 'text',
+          '-webkit-background-clip': 'text',
+          '-webkit-text-fill-color': 'transparent',
         }
       }
       addUtilities(newUtilities, [ 'responsive', 'hover', 'group-hover'])

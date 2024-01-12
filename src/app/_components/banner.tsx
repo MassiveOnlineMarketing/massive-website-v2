@@ -1,6 +1,6 @@
 import { Button } from '@/components/ui/button'
 import { Heading, Paragraph } from '@/components/ui/typography/typography'
-import container, { styles } from '@/styles/styles'
+import container, { constants, styles } from '@/styles/styles'
 import { ArrowLongRightIcon } from '@heroicons/react/20/solid'
 import Image from 'next/image'
 import React from 'react'
@@ -9,7 +9,7 @@ import { BannerSvg } from '../_assets'
 export const Banner = () => {
   return (
     <div className={`relative ${container.maxWidth}`}>
-      <div className={`relative overflow-hidden  ${styles.glass} rounded-[20px] flex flex-row  `}>
+      <div className={`relative overflow-hidden  ${constants.glassFill} shadow-custom-lg rounded-[20px] flex flex-row  `}>
         <div className='absolute bg-gradient-to-l from-[#FFCFA3] from--4.42% via-[#C176FC] via-14.47% via-[#9076FC] via-54.38% to-[#C6B8FF] to-85.5% h-2 top-0 w-full'></div>
         
         <div className='pt-12 pl-8 pb-8 max-w-[650px]'>

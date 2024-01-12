@@ -5,7 +5,10 @@
 /* * Global */
 /* Primary */
 .primary-button{
-  background: linear-gradient(180deg, #7857FF 52.48%, #6442F2 100%);
+  background: 
+  radial-gradient(84.31% 84.31% at 50% 73.53%, rgba(255, 255, 255, 0.00) 76.66%, rgba(255, 255, 255, 0.15) 100%), linear-gradient(221deg, rgba(251, 201, 212, 0.50) -18.22%, rgba(251, 201, 212, 0.00) 34.14%), linear-gradient(180deg, #8D72FF 0%, #7857FF 57%);
+    
+    /* linear-gradient(180deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.1) 100%) border-box, */
 }
 .primary-button:hover{
   background: linear-gradient(180deg, #8568FF 0%, #7758F6 100%);

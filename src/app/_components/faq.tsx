@@ -2,9 +2,13 @@ import { Accordion, AccordionContainer, AccordionContent, AccordionHeader } from
 import { constants } from '@/styles/styles'
 import React from 'react'
 
+
+import ModalFullScreen from "@/features/modal/FullScreenModal";
+import { MultiStepContactForm } from "@/features/contact-form/multistep/contact-form";
+
 const Faq = () => {
   return (
-    <div>
+    <div className='mt-[100px] flex flex-col'>
       <AccordionContainer>
         {ACCORDION.accordion.map((item, index) => (
           <Accordion key={index} className={`${constants.glassFill} rounded-xl shadow-custom-lg backdrop-blur-md test-gradient`} >
@@ -14,6 +18,12 @@ const Faq = () => {
         ))}
 
       </AccordionContainer>
+
+      <ModalFullScreen buttonText='Neem Contact op' className='mt-16 mx-auto' animationDuration={1000} animationIn='element' animationOut='element-out' variant='glass' size='md'>
+        <MultiStepContactForm />
+      </ModalFullScreen>
+
+      <p className='text-sm font-normal leading-5 text-gray-500 mx-auto mt-4'>Of neem direct contact op <a className='font-semibold' href="mailto:info@massiveonlinemarketing.nl">info@massiveonlinemarketing.nl</a></p>
     </div>
   )
 }

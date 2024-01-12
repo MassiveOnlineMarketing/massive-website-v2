@@ -10,7 +10,7 @@ import { ArrowContactSvg } from '../_assets'
 
 const SectionGesprek = () => {
   return (
-    <div className={`relative ${container.maxWidth} grid grid-cols-2`}>
+    <div className={`mt-[130px] relative ${container.maxWidth} grid grid-cols-2`}>
       <ArrowContactSvg className='absolute top-0 left-1/2 -translate-x-1/2' />
 
       <div className='my-auto'>

@@ -1,9 +1,9 @@
 export const constants = {
   glassStroke: "glass-border-gradient relative",
-  glassFill: "shadow-md backdrop-blur-md bg-gradient-to-b from-[#fff]/60 to-[#fff]/50 bg-white/60",
+  glassFill: " backdrop-blur-md bg-gradient-to-b from-[#fff]/60 to-[#fff]/50",
 
   darkStroke: "dark-glass-border-gradient relative",
-  darkFill: "shadow-md backdrop-blur-md bg-gradient-to-b from-[#1F29371A]/60 to-[#1F29371A]/50"
+  darkFill: "backdrop-blur-md bg-gradient-to-b from-[#1F29371A]/60 to-[#1F29371A]/50"
 }
 
 const container = {
@@ -11,8 +11,8 @@ const container = {
 }
 
 export const styles = {
-  glass: `${constants.glassStroke} ${constants.glassFill}`,
-  darkGlass: `${constants.darkStroke} ${constants.darkFill}`,
+  glass: `${constants.glassStroke} ${constants.glassFill} shadow-md`,
+  darkGlass: `${constants.darkStroke} ${constants.darkFill} shadow-md`,
 
 
 }

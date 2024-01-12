@@ -2,7 +2,7 @@ import { ResponsiveGridContainer } from '@/components/layouts/containers'
 import { Button } from '@/components/ui/button'
 import Title from '@/components/ui/typography/title'
 import { Heading, Paragraph, SubHeading } from '@/components/ui/typography/typography'
-import container, { styles } from '@/styles/styles'
+import container, { constants, styles } from '@/styles/styles'
 import { ComputerDesktopIcon, MagnifyingGlassIcon } from '@heroicons/react/20/solid'
 import { AcademicCapIcon, ChevronRightIcon } from '@heroicons/react/24/outline'
 import Image from 'next/image'
@@ -18,8 +18,8 @@ export const Diensten = () => {
       </Title>
       <ResponsiveGridContainer columns='2' className='gap-6 mt-[52px]'>
         {DIENSTEN.cards.map((card) => (
-          <div key={card.subHeading} className={`px-3 pt-3 pb-4 rounded-[20px] backdrop-blur-md shadow-custom-lg bg-transparent h-full flex flex-col`}>
-            <Image src={card.image} width={614} height={214} alt={`${card.subHeading} card image h-[614px] `} />
+          <div key={card.subHeading} className={`px-3 pt-3 pb-4 rounded-[20px] backdrop-blur-md shadow-custom-lg h-full flex flex-col ${constants.glassFill}`}>
+            <Image src={card.image} width={614} height={214} alt={`${card.subHeading} card image`}  />
 
             <div className='flex flex-col h-full justify-between'>
               <Title className='mt-3 px-3'>
