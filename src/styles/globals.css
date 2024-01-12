@@ -1,0 +1,111 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* * Global */
+/* Primary */
+.primary-button{
+  background: linear-gradient(180deg, #7857FF 52.48%, #6442F2 100%);
+}
+.primary-button:hover{
+  background: linear-gradient(180deg, #8568FF 0%, #7758F6 100%);
+}
+.primary-button:before{
+  background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(236, 181, 255, 0.85) 50%, rgba(236, 181, 255, 0.2) 100%);
+  opacity: 0.3;
+  padding: 1px;
+  
+  border-radius: 6.5px;
+  content: "";
+  inset: 1.5px;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);
+  mask-composite: xor;
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  position: absolute;
+}
+/* Dark */
+/* not used in headings or buttons */
+.dark-border-gradient:before{
+  background: 
+    linear-gradient(180deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.1) 100%) padding-box,
+    linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0) 100%) border-box;
+  padding: 6px;
+
+  border-radius: inherit;
+  content: "";
+  inset: 0;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);
+  mask-composite: xor;
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  position: absolute;
+}
+
+
+
+/* * Heading */
+/* Sub heading - glass dark */
+.dark-glass-border-gradient:before {
+  background-image: linear-gradient(to top, rgba(31, 41, 55, 100), rgba(31, 41, 55, 0));
+  padding: 1px;
+  
+
+  border-radius: inherit;
+  content: "";
+  inset: 0;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);
+  mask-composite: xor;
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  position: absolute;
+}
+
+/* Sub heading - glass */
+.glass-border-gradient:before{
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 100), rgba(255, 255, 255, 0));
+  padding: 1px;
+
+  border-radius: inherit;
+  content: "";
+  inset: 0;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);
+  mask-composite: xor;
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  position: absolute;
+}
+
+/* * Gradients */
+/* Home */
+/* .gradient-banner{
+  background: linear-gradient(270deg, #FFCFA3 -4.42%, #C176FC 14.17%, #9076FC 54.38%, #C6B8FF 85.8%);
+} */
+
+.gradient-toekomstvisie{
+  background: linear-gradient(248deg, rgba(120, 87, 255, 0.25) 3.35%, rgba(120, 87, 255, 0.00) 27.56%), #111827
+}
+.test-gradient:before{
+  background: linear-gradient(to top, rgba(255, 207, 163, 1), rgba(193, 118, 252, 1), rgba(144, 118, 252, 1), rgba(198, 184, 255, 1));
+  padding-left: 2.5px;
+
+  border-radius: inherit;
+  content: "";
+  inset: 0;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);
+  mask-composite: xor;
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  position: absolute;
+}
+

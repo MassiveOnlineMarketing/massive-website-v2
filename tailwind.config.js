@@ -31,6 +31,8 @@ module.exports = {
       },
       boxShadow: {
         'base': '0px 1px 2px 0px rgba(0, 0, 0, 0.06), 0px 1px 3px 0px rgba(0, 0, 0, 0.10)',
+        'md' : '0px 2px 4px -1px rgba(21, 23, 77, 0.06), 0px 4px 6px -1px rgba(27, 35, 64, 0.10)',
+        'custom-lg': '0px 18px 30px 0px rgba(0, 0, 0, 0.04), 0px 70px 60px 0px rgba(0, 0, 0, 0.03), 0px 158px 85px 0px rgba(0, 0, 0, 0.02), 0px 281px 100px 0px rgba(0, 0, 0, 0.01), 0px 439px 123px 0px rgba(0, 0, 0, 0.00)',
       },
       transitionDuration: {
         5000: "5000ms",

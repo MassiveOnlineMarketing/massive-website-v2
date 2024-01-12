@@ -1,9 +1,9 @@
 import * as React from "react"
 import { Slot } from "@radix-ui/react-slot"
 import { cva, type VariantProps } from "class-variance-authority"
-import "../../app/globals.css"
-
+import '@/styles/globals.css'
 import { cn } from "@/lib/utils"
+import { constants } from "@/styles/styles"
 
 const buttonVariants = cva(
   "rounded-lg  inline-flex items-center justify-center whitespace-nowrap w-fit h-fit",
@@ -21,10 +21,11 @@ const buttonVariants = cva(
         secondary:"bg-white text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50",
 
         light: 'border border-gray-200 text-gray-600 hover:shadow-base hover:border-none hover:-translate-y-[1px] hover:mb-[1px] transition-transform duration-100',
-        dark: 'text-gray-50 bg-gradient-to-b from-[#1F2937]/60 to-[#1F2937]/50 dark-border-gradient relative',
+        dark: `text-gray-50 ${constants.darkStroke} ${constants.darkFill}`,
         flat: 'text-gray-50 bg-gray-800 hover:bg-gray-700',
         text: 'text-gray-800 hover:text-primary',
         disabled: 'text-gray-400 bg-gray-200 cursor-not-allowed',
+        glass: `text-gray-800 ${constants.glassStroke} ${constants.glassFill}`  ,
         
         link: "text-neutral-900 underline-offset-4 hover:underline dark:text-neutral-50",
         nav: 'py-[6px] px-4 rounded-full border border-[#000]/10  shadow-md bg-[#fff]/50 transition-all duration-500 hover:shadow-none hover:border-transparent hover:bg-[#fff]/0',

@@ -1,6 +1,7 @@
 import * as React from "react";
 import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
+import { constants } from "@/styles/styles";
  
 // Types for Heading
 export type HeadingProps = VariantProps<typeof headingVariants> &
@@ -45,6 +46,7 @@ export const headingVariants = cva(
         },
         variants: {
             size: {
+                '7xl': "text-6xl leading-10 font-bold md:text-7xl md:leading-none",
                 '5xl': "text-4xl leading-10 font-bold md:text-5xl md:leading-none",
                 '4xl': "text-3xl leading-9 font-bold md:text-4xl md:leading-10",
                 '3xl': "text-2xl leading-8 font-bold md:text-3xl md:leading-9",
@@ -60,6 +62,7 @@ export const headingVariants = cva(
                 muted: "text-gray-600 dark:text-gray-400",
                 accent: "text-indigo-600 dark:text-indigo-400",
                 donker: "text-[#1F2937]",
+                white: "text-white",
 
                 'gradient-primary': 'text-gradient-primary',
             },
@@ -94,8 +97,10 @@ export const subHeadingVariants = cva(
                 gray: "text-gray-500 bg-gray-50",
                 'text-purple': "text-purple-500" ,
                 'gradient-primary': 'text-gradient-primary',
-                'glass' : 'text-gray-800  shadow-md backdrop-blur-md bg-gradient-to-b from-[#fff]/60 to-[#fff]/50 bg-white/60 glass-border-gradient relative', 
-                'glass-dark': 'text-white shadow-md backdrop-blur-md bg-gradient-to-b from-[#1F29371A]/60 to-[#1F29371A]/50 dark-glass-border-gradient relative'
+                
+                // Pill variant
+                'glass' : `${constants.glassStroke} ${constants.glassFill}`, 
+                'glass-dark': `text-gray-50 ${constants.darkStroke} ${constants.darkFill}`
             },
             variant: {
                 rounded: "rounded-full",
@@ -133,6 +138,7 @@ export const paragraphVariants = cva(
     "transition-all",
     {
         defaultVariants: {
+            size: 'base',
             colorScheme: "default",
         },
         variants: {
@@ -147,6 +153,7 @@ export const paragraphVariants = cva(
                 default: "text-gray-900 dark:text-gray-100",
                 muted: "text-gray-600 dark:text-gray-400",
                 accent: "text-indigo-600 dark:text-indigo-400",
+                white: "text-white",    
             },
         },
     }

@@ -1,3 +1,9 @@
-import LineBackground from './blending_1700339058870.svg'
+import GridBackground from './hero-grid-background.svg'
+import WhiteWave from './white-wave.svg'
+import GradientWave from './gradient-wave.svg'
 
-export { LineBackground };  
+export { 
+  GridBackground, 
+  WhiteWave,
+  GradientWave,
+};  

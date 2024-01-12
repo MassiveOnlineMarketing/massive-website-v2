@@ -1,4 +1,5 @@
-import Polygon_1 from './Polygon_38.svg';
-import Polygon_2 from './Polygon_45.svg';
+import PurpleCheckmarkRound from './purple-checkmark-round.svg';
 
-export { Polygon_1, Polygon_2 };
+export { 
+    PurpleCheckmarkRound
+};

@@ -1,5 +1,6 @@
 import { Inter } from 'next/font/google'
-import './globals.css'
+import '@/styles/globals.css'
+import '@/styles/animations.css'
 import Script from 'next/script'
 
 // Meta data
@@ -10,7 +11,6 @@ import { Providers } from './providers'
 // Cookie consent
 import LoadCookies from '@/features/cookie-consent/LoadCookies'
 import CookieConsentBanner from '@/features/cookie-consent/CookieConsentBanner'
-import { Navbar } from '@/components/partials/Navbar'
 import Footer from '@/components/partials/Footer'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -91,9 +91,7 @@ export default function RootLayout({
     <html lang="nl">
       <body className={inter.className}>
 
-        <header>
-          <Navbar />
-        </header>
+
         
         <Providers>
           {children}
