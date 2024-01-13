@@ -8,7 +8,7 @@ import { Banner } from "./_components/banner";
 import { Navbar } from '@/components/partials/Navbar'
 import SectionOne from "./_components/section-one";
 import { Diensten } from "./_components/diensten";
-import { GradientWave } from "@/assets/backgrounds";
+import { GradientWave, GridBackground } from "@/assets/backgrounds";
 import { Usps } from "./_components/usps";
 import SectionGesprek from "./_components/section-gesprek";
 import ToekomstVisie from "./_components/toekomst-visie";
@@ -20,9 +20,11 @@ import Faq from "./_components/faq";
 
 export default function Home() {
   return (
-    <main className="w-full">
+    <main className="w-full overflow-hidden">
 
       <div className="relative">
+        <GridBackground className='absolute top-0 left-0 -z-10' />
+
         <header>
           <Navbar />
         </header>
