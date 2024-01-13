@@ -1,38 +1,75 @@
-import { ResponsiveGridContainer } from '@/components/layouts/containers'
+'use client'
+
 import { Button } from '@/components/ui/button'
 import Title from '@/components/ui/typography/title'
 import { Heading, Paragraph, SubHeading } from '@/components/ui/typography/typography'
+import { SwipeArrowNav, SwipeContent, SwipeDots, SwipeProvider } from '@/features/swipe'
 import container, { constants, styles } from '@/styles/styles'
 import { ComputerDesktopIcon, MagnifyingGlassIcon } from '@heroicons/react/20/solid'
 import { AcademicCapIcon, ChevronRightIcon } from '@heroicons/react/24/outline'
 import Image from 'next/image'
 import React from 'react'
 
+import { useMediaQuery } from 'react-responsive'
+
 export const Diensten = () => {
+  const isMobile = useMediaQuery({ query: '(max-width: 768px)' })
+
   return (
     <div className={`${container.maxWidth}`}>
-      <Title className='max-w-[641px]'>
+      <Title className='max-w-[641px] px-4 md:px-0'>
         <SubHeading level='h2' size='sm' colorScheme='gradient-primary'>{DIENSTEN.title.subheading}</SubHeading>
         <Heading level='h3' size='4xl'>{DIENSTEN.title.heading}</Heading>
         <Paragraph size='base'>{DIENSTEN.title.paragraph}</Paragraph>
       </Title>
-      <ResponsiveGridContainer columns='2' className='gap-6 mt-[52px]'>
-        {DIENSTEN.cards.map((card) => (
-          <div key={card.subHeading} className={`px-3 pt-3 pb-4 rounded-[20px] backdrop-blur-md shadow-custom-lg h-full flex flex-col ${constants.glassFill}`}>
-            <Image src={card.image} width={614} height={214} alt={`${card.subHeading} card image`}  />
+      
 
-            <div className='flex flex-col h-full justify-between'>
-              <Title className='mt-3 px-3'>
-                <SubHeading level='h4' size='sm' className='font-normal flex flex-row gap-[10px] py-[6px] items-center'>{card.icon} {card.subHeading}</SubHeading>
-                <Heading level='h5' size='2xl'>{card.heading}</Heading>
-                <Paragraph>{card.paragraph}</Paragraph>
-              </Title>
-              <Button variant='glass' size='sm' className='mt-3 mx-3 pr-[10px]'>{card.buttonLabel} <ChevronRightIcon className='w-4 h-4' /></Button>
+      {isMobile ? (
+        <div className='relative mt-8'>
+          <SwipeProvider numberOfCards={6}>
+            <SwipeArrowNav />
+            <SwipeContent className='mt-4' >
+              {DIENSTEN.cards.map((card, i) => (
+                <div key={i} className={`px-3 pt-3 pb-4 rounded-[20px] backdrop-blur-md shadow-custom-lg h-full flex flex-col ${constants.glassFill}`}>
+                  <div className='w-full h-[207px]'>
+                    <Image src={card.image} width={614} height={214} alt={`${card.subHeading} card image `} className='h-full  md:w-[614px] md:h-[214px]' />
+                  </div>
 
-            </div>
-          </div>
-        ))}
-      </ResponsiveGridContainer>
+                  <div className='flex flex-col h-full justify-between'>
+                    <Title className='mt-3'>
+                      <SubHeading level='h4' size='sm' className='font-normal flex flex-row gap-[10px] py-[6px] items-center'>{card.icon} {card.subHeading}</SubHeading>
+                      <Heading level='h5' size='2xl'>{card.heading}</Heading>
+                      <Paragraph>{card.paragraph}</Paragraph>
+                    </Title>
+                    <Button variant='glass' size='sm' className='mt-3 pr-[10px]'>{card.buttonLabel} <ChevronRightIcon className='w-4 h-4' /></Button>
+
+                  </div>
+                </div>
+              ))}
+            </SwipeContent>
+            <SwipeDots className='mt-16' />
+          </SwipeProvider>
+        </div>
+      ) : (
+        <div className=' grid md:grid-cols-2 xl:grid-cols-3 gap-6 mt-[52px]'> 
+          {DIENSTEN.cards.map((card, i) => (
+              <div key={i} className={`px-3 pt-3 pb-4 rounded-[20px] backdrop-blur-md shadow-custom-lg h-full flex flex-col ${constants.glassFill}`}>
+                <Image src={card.image} width={614} height={214} alt={`${card.subHeading} card image`}  />
+
+                <div className='flex flex-col h-full justify-between'>
+                  <Title className='mt-3 px-3'>
+                    <SubHeading level='h4' size='sm' className='font-normal flex flex-row gap-[10px] py-[6px] items-center'>{card.icon} {card.subHeading}</SubHeading>
+                    <Heading level='h5' size='2xl'>{card.heading}</Heading>
+                    <Paragraph>{card.paragraph}</Paragraph>
+                  </Title>
+                  <Button variant='glass' size='sm' className='mt-3 mx-3 pr-[10px]'>{card.buttonLabel} <ChevronRightIcon className='w-4 h-4' /></Button>
+
+                </div>
+              </div>
+            ))}
+        </div>
+      )}
+
     </div>
   )
 }

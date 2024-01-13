@@ -13,20 +13,20 @@ import { MultiStepContactForm } from "@/features/contact-form/multistep/contact-
 const Hero = () => {
   return (
     <div className='relative'>
-      <div className={`grid grid-cols-2 ${container.maxWidth}`}>
-        <div className='my-auto'>
+      <div className={`md:pb-16 lg:pb-0 grid md:grid-cols-2 ${container.maxWidth}`}>
+        <div className='my-auto lg:pb-[120px]'>
           <Title>
             <SubHeading level="h1" size="sm" colorScheme="glass" variant="pill" className='text-primary'>{HERO.subheading}</SubHeading>
-            <Heading level='h2' size='7xl' >{HERO.heading}</Heading>
+            <Heading level='h2' size='7xl' className='text-4xl' >{HERO.heading}</Heading>
             <Paragraph size='lg' >{HERO.paragraph}</Paragraph>
           </Title>
-          <ModalFullScreen buttonText={HERO.buttonLabel} className='mt-6' animationDuration={1000} animationIn='element' animationOut='element-out'> 
+          <ModalFullScreen buttonText={HERO.buttonLabel} className='mt-6 w-full md:w-fit' animationDuration={1000} animationIn='element' animationOut='element-out'> 
             <MultiStepContactForm />
           </ModalFullScreen>
           {/* <Button variant='primary' className='mt-6'>{HERO.buttonLabel}</Button> */}
         </div>
         
-        <Image src={'/home/hero-image-home.png'} width={750} height={730} alt='klant die blij zijn website laat zien' className='py-[104px]' />
+        <Image src={'/home/hero-image-home.png'} width={750} height={730} alt='klant die blij zijn website laat zien' className='py-6 md:py-[104px]' />
       </div>
 
       <WhiteWave className='absolute bottom-0 left-0 -z-10' />	

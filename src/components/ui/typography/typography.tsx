@@ -2,9 +2,9 @@ import * as React from "react";
 import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 import { styles } from "@/styles/styles";
- 
+
 // Types for Heading
-export type HeadingProps = VariantProps<typeof headingVariants> &
+export type HeadingProps = ReturnType<typeof headingVariants> &
     React.ComponentPropsWithoutRef<"h1"> &
 {
     level: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
@@ -12,7 +12,7 @@ export type HeadingProps = VariantProps<typeof headingVariants> &
 };
 
 // Types for Highlight
-export type HighlightProps = VariantProps<typeof highlightVariants> & {
+export type HighlightProps = ReturnType<typeof highlightVariants> & {
     highlight?: string;
 };
 
@@ -21,7 +21,7 @@ export type HeadingWithHighlightProps = HeadingProps & HighlightProps;
 
 
 // Types for SubHeading
-export type SubHeadingProps = VariantProps<typeof subHeadingVariants> &
+export type SubHeadingProps = ReturnType<typeof subHeadingVariants> &
     React.ComponentPropsWithoutRef<"h1"> &
 {
     level: "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p";
@@ -29,7 +29,7 @@ export type SubHeadingProps = VariantProps<typeof subHeadingVariants> &
 };
 
 // Types for Paragraph
-export type ParagraphProps = VariantProps<typeof paragraphVariants> & 
+export type ParagraphProps = ReturnType<typeof paragraphVariants> & 
     React.ComponentPropsWithoutRef<"p"> & 
 {
     className?: string;
@@ -46,16 +46,16 @@ export const headingVariants = cva(
         },
         variants: {
             size: {
-                '7xl': "text-6xl leading-10 font-bold md:text-7xl md:leading-none",
-                '5xl': "text-4xl leading-10 font-bold md:text-5xl md:leading-none",
-                '4xl': "text-3xl leading-9 font-bold md:text-4xl md:leading-10",
-                '3xl': "text-2xl leading-8 font-bold md:text-3xl md:leading-9",
+                '7xl': "text-6xl leading-10 font-semibold md:text-7xl md:leading-none",
+                '5xl': "text-4xl leading-10 font-semibold md:text-5xl md:leading-none",
+                '4xl': "text-3xl leading-9 font-semibold md:text-4xl md:leading-10",
+                '3xl': "text-2xl leading-8 font-semibold md:text-3xl md:leading-9",
                 '2xl': "text-base leading-6 font-semibold md:text-2xl md:leading-8",
                 xl: "text-base md:text-xl font-semibold leading-7",
-                lg: "text-lg leading-6 font-semibold md:text-lg md:leading-6",
-                base: "text-base leading-6 font-semibold md:text-base md:leading-6",
-                sm: "text-sm leading-5 font-semibold md:text-sm md:leading-5",
-                xs: "text-xs leading-4 font-semibold md:text-xs md:leading-4",
+                lg: "text-lg leading-7 font-semibold",
+                base: "text-base leading-6 font-semibold",
+                sm: "text-sm leading-5 font-semibold",
+                xs: "text-xs leading-4 font-semibold",
             },
             colorScheme: {
                 default: "text-gray-800 dark:text-gray-100",
@@ -187,7 +187,7 @@ const Heading: React.FC<HeadingWithHighlightProps> = (
         <Component className={cn(headingClasses, className, transition)} {...props}>
             {highlight && children ? (
                 <>
-                    {children.toString().split(highlight).map((part, i, arr) => (
+                    {children.toString().split(highlight).map((part: string, i: number, arr: string[]) => (
                         <>
                             {part}
                             {i < arr.length - 1 && <span key={i} className={cn(highlightClasses, className)}>{highlight}</span>}

@@ -15,7 +15,7 @@ type ResponsiveContainerProps = {
   children: React.ReactNode
 }
 
-type ResponsiveGridContainerProps = VariantProps<typeof responsiveContainerVariants> & ResponsiveContainerProps  
+type ResponsiveGridContainerProps = ReturnType<typeof responsiveContainerVariants> & ResponsiveContainerProps  
 
 
 const responsiveContainerVariants = cva(

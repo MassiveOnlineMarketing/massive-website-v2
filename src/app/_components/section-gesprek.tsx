@@ -10,19 +10,19 @@ import { ArrowContactSvg } from '../_assets'
 
 const SectionGesprek = () => {
   return (
-    <div className={`mt-[130px] relative ${container.maxWidth} grid grid-cols-2`}>
-      <ArrowContactSvg className='absolute top-0 left-1/2 -translate-x-1/2' />
+    <div className={` mt-[70px] md:mt-[130px] relative ${container.maxWidth} md:grid grid-cols-2`}>
+      <ArrowContactSvg className='md:block absolute top-0 left-1/2 -translate-x-1/2 hidden' />
 
-      <div className='my-auto'>
+      <div className='my-auto px-4 md:px-0'>
         <div className='flex flex-col gap-4 pr-4'>
           <SubHeading level='h2' size='sm' colorScheme='gradient-primary' className='py-[6px]'>{SECTION_GESPREK.subheading}</SubHeading>
           <Heading level='h3' size='4xl' >{SECTION_GESPREK.heading}</Heading>
           <Paragraph>{SECTION_GESPREK.paragraph}</Paragraph>
           <div className='h-[1px] w-full bg-gray-300'></div>
         </div>
-        <ul>
+        <ul className='mt-4'>
           {SECTION_GESPREK.list.map((item) => (
-            <li key={item} className='flex flex-row gap-4 items-center mt-6'>
+            <li key={item} className='flex flex-row gap-4 items-center mt-3'>
               <PurpleCheckmarkRound />
               <Paragraph className='font-medium'>{item}</Paragraph>
             </li>

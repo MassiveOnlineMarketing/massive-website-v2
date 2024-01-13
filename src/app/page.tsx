@@ -30,7 +30,7 @@ export default function Home() {
 
         <Image src={'/home/mesh-gradient-hero-1920x1090.jpg'} width={1920} height={1090} alt='hero background gradient' className="absolute top-0 left-0 -z-20 h-full w-full mx-auto" />
       
-        <div className="lg:block absolute -bottom-[145px] w-full hidden">
+        <div className="absolute -bottom-[145px] w-full ">
           <Banner  />
         </div>
       </div>
@@ -40,7 +40,7 @@ export default function Home() {
       <div className="relative">
         <Diensten />
 
-        <GradientWave className='absolute top-1/4 left-0 -z-10' />
+        <GradientWave className='absolute bottom-0 md:top-1/4 left-0 -z-10' />
       </div>
 
       <Usps />

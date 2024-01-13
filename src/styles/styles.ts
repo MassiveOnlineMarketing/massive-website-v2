@@ -7,7 +7,9 @@ export const constants = {
 }
 
 const container = {
-  maxWidth: 'max-w-[1300px] mx-auto'
+  maxWidth: 'max-w-[1300px] mx-auto px-4 ',
+  maxWidtht: 'max-w-[1300px] mx-auto  ',
+  gutter: 'px-4 ',
 }
 
 export const styles = {

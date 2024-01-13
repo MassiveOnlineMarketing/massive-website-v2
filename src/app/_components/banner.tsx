@@ -12,16 +12,16 @@ export const Banner = () => {
       <div className={`relative overflow-hidden  ${constants.glassFill} shadow-custom-lg rounded-[20px] flex flex-row  `}>
         <div className='absolute bg-gradient-to-l from-[#FFCFA3] from--4.42% via-[#C176FC] via-14.47% via-[#9076FC] via-54.38% to-[#C6B8FF] to-85.5% h-2 top-0 w-full'></div>
         
-        <div className='pt-12 pl-8 pb-8 max-w-[650px]'>
+        <div className=' p-6 md:pt-12 md:pl-8 md:pb-8 max-w-[650px]'>
           <Heading level='h3' size='3xl' className='font-semibold' >{BANNER.heading}</Heading>
           <Paragraph size='base' className='mt-4' >{BANNER.paragraaf}</Paragraph>
           <Button size='sm' variant='glass' className='mt-6 pr-[10px]'>{BANNER.buttonLabel} <ArrowLongRightIcon className='w-4 h-4'/></Button>
         </div>
 
-        <Image src={'/home/banner-image.png'} width={447} height={295} alt='banner image' className='ml-auto mt-auto'/>
+        <Image src={'/home/banner-image.png'} width={447} height={295} alt='banner image' className='lg:block ml-auto mt-auto hidden'/>
       </div>
 
-        <BannerSvg className='absolute right-[-29px] bottom-[-39px]' />
+        <BannerSvg className='md:block absolute right-[-29px] bottom-[-39px] hidden' />
     </div>
   )
 }

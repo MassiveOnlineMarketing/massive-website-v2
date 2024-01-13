@@ -4,11 +4,10 @@ import { Slot } from "@radix-ui/react-slot";
 import Link, { LinkProps } from "next/link";
 
 import { buttonVariants } from "./button";
-import { VariantProps } from "class-variance-authority";
 
 export interface ExternalAnchorProps
     extends React.AnchorHTMLAttributes<HTMLAnchorElement>,
-    VariantProps<typeof buttonVariants> {
+    ReturnType<typeof buttonVariants> {
     href: string;
     asChild?: boolean;
 }
@@ -34,7 +33,7 @@ ExternalAnchor.displayName = "ExternalAnchor";
 
 
 interface InternalAnchorProps extends LinkProps,
-VariantProps<typeof buttonVariants> {
+ReturnType<typeof buttonVariants> {
     href: string;
     children?: React.ReactNode;
     className?: string;

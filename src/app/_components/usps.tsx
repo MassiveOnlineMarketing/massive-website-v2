@@ -6,19 +6,22 @@ import { UspsOneSvg } from '../_assets'
 
 export const Usps = () => {
   return (
-    <div className={` mt-[130px]  px-12 py-24 rounded-[20px] ${container.maxWidth} shadow-inner bg-[url('/home/gradient-background-usps.jpg')] bg-cover `}>
-      <Title className='max-w-[750px] mx-auto text-center items-center'>
-        <SubHeading level='h2' size='sm' colorScheme='gradient-primary' className='pt-[6px]'>{USPS.title.subHeading}</SubHeading>	
-        <Heading level='h3' size='2xl'>{USPS.title.heading}</Heading>
-      </Title>
-      <div className='mt-16 grid sm:grid-cols-2 xl:grid-cols-4 gap-8'>
-        {USPS.cards.map((card) => (
-          <div key={card.heading} className='flex flex-col '>
-            {card.icon}
-            <Heading level='h4' size='lg' className='font-medium mt-4'>{card.heading}</Heading>
-            <Paragraph className='text-gray-700 mt-[8px]'>{card.paragraph}</Paragraph>
-          </div>
-        ))}
+    <div className={` ${container.gutter}`}>
+      <div className={` mt-[60px] md:mt-[130px] px-6 md:px-12 py-12 md:py-24 rounded-[20px] ${container.maxWidth} shadow-inner bg-[url('/home/gradient-background-usps.jpg')] bg-cover bg-center`}>
+        <Title className='max-w-[750px] mx-auto md:text-center md:items-center'>
+          <SubHeading level='h2' size='sm' colorScheme='gradient-primary' className='pt-[6px]'>{USPS.title.subHeading}</SubHeading>	
+          <Heading level='h3' size='2xl'>{USPS.title.heading}</Heading>
+        </Title>
+        <div className='mt-16 grid sm:grid-cols-2 xl:grid-cols-4 gap-8'>
+          {USPS.cards.map((card) => (
+            <div key={card.heading} className='flex flex-col '>
+              {card.icon}
+              <Heading level='h4' size='lg' className='font-medium mt-4'>{card.heading}</Heading>
+              <Paragraph className='text-gray-700 mt-[8px]'>{card.paragraph}</Paragraph>
+            </div>
+          ))}
+        </div>
+
       </div>
 
     </div>

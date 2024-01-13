@@ -22,6 +22,10 @@ interface ModalProps {
   buttonClassName?: string;
 }
 
+export const ModalContext = React.createContext<{
+  setIsVisible: React.Dispatch<React.SetStateAction<boolean>>;
+} | null>(null);
+
 const ModalFullScreen: React.FC<ModalProps> = ({children, buttonText, className, initialIsVisible = false, animationDuration, animationIn, animationOut   , size, variant, option}) => {
   const { setIsVisible, shouldRender, animationClass } = useAnimatedVisibility({
     initialIsVisible,
@@ -31,7 +35,7 @@ const ModalFullScreen: React.FC<ModalProps> = ({children, buttonText, className,
   });
 
   return (
-    <>
+    <ModalContext.Provider value={{ setIsVisible }}>
       <Button className={className} onClick={() => setIsVisible(true)} size={size} variant={variant} option={option} >{buttonText}</Button>
 
       {shouldRender && (
@@ -45,7 +49,7 @@ const ModalFullScreen: React.FC<ModalProps> = ({children, buttonText, className,
           </div>
         </div>
       )}
-    </>
+    </ModalContext.Provider>
   );
 }
 

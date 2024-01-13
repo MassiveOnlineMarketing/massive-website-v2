@@ -22,7 +22,7 @@ const WaarWijVoorStaan = () => {
         <Heading level='h2' size='4xl' className='font-semibold' >Waar wij voor staan</Heading>
         <ResponsiveGridContainer columns='3' className='gap-10 my-[62px]'> 
           {WAAR_WIJ_VOOR_STAAN.cards.map((item) => (
-            <div key={item.heading} className='flex flex-row gap-3'>
+            <div key={item.heading} className='flex flex-col md:flex-row gap-3'>
               <div className='text-primary'>
                 {item.icon}
               </div>

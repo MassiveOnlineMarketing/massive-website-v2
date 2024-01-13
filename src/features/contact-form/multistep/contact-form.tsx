@@ -27,6 +27,7 @@ import { EcommerceStep } from './Ecommerce';
 import { SEOStep } from './SEO';
 import { SEAStep } from './SEA';
 import { StrategieStep } from './Strategie';
+import { ModalContext } from '@/features/modal/FullScreenModal';
 
 type Inputs = z.infer<typeof formSchema>;
 
@@ -43,6 +44,15 @@ export type MultiStepContactFormChildProps = {
 export const MultiStepContactForm: React.FC<MultiStepContactForm> = ({ className }) => {
     // set state data
     const [data, setData] = useState<Inputs>();
+
+    // get modal context
+    const modalContext = React.useContext(ModalContext);
+    if (!modalContext) {
+        throw new Error("ModalContext is null. Make sure you're using the context inside a ModalContext.Provider");
+    }
+
+    const { setIsVisible } = modalContext;
+
 
     // destructure helper functions from Zod
     const {
@@ -146,7 +156,22 @@ export const MultiStepContactForm: React.FC<MultiStepContactForm> = ({ className
             return;
         }
 
-        reset();
+        try {
+            const response = await fetch('/api/send', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            });  
+            
+            reset();
+            setIsVisible(false);
+
+        } catch (error) {
+            
+        }
+
         setData(data);
         // handleClose(); 
     };

@@ -10,20 +10,23 @@ import { MultiStepContactForm } from "@/features/contact-form/multistep/contact-
 
 const ToekomstVisie = () => {
   return (
-    <div className={`mt-[100px] relative overflow-hidden rounded-[32px] shadow-custom-lg   ${container.maxWidth} dark-border-gradient z-10`}>
-      <div className='px-12 py-[82px] gradient-toekomstvisie '>
-        <Image src='/home/toekomstvisie-en-ambitie-background.png' width={977} height={484} alt='toekomstvisie en ambitie background' className='absolute top-0 right-0 h-full' />
+    <div className='px-4'>
+      <div className={`mt-[100px] relative overflow-hidden rounded-[32px] shadow-custom-lg   ${container.maxWidtht} dark-border-gradient z-10`}>
+        <div className=' px-6 md:px-12 pt-12 pb-6 md:py-[82px] gradient-toekomstvisie '>
+          <Image src='/home/toekomstvisie-en-ambitie-background.png' width={977} height={484} alt='toekomstvisie en ambitie background' className='absolute top-0 right-0 h-full' />
 
-        <Title className='relative z-20 max-w-[600px]'>
-          <SubHeading level="h2" size='sm' colorScheme='glass-dark' variant='pill'>{TOEKOMST_VISIE.subHeading}</SubHeading>
-          <Heading level='h3' size='4xl' colorScheme='white' colorSchemeHighlight='gradient-primary' highlight='Massive'>{TOEKOMST_VISIE.heading}</Heading>
-          <Paragraph colorScheme='white'>{TOEKOMST_VISIE.paragraph}</Paragraph >
-        </Title>
+          <Title className='relative z-20 max-w-[600px]'>
+            <SubHeading level="h2" size='sm' colorScheme='glass-dark' variant='pill'>{TOEKOMST_VISIE.subHeading}</SubHeading>
+            <Heading level='h3' size='4xl' colorScheme='white' colorSchemeHighlight='gradient-primary' highlight='Massive'>{TOEKOMST_VISIE.heading}</Heading>
+            <Paragraph colorScheme='white'>{TOEKOMST_VISIE.paragraph}</Paragraph >
+          </Title>
 
-        <ModalFullScreen buttonText={TOEKOMST_VISIE.buttonLabel} className='mt-8' animationDuration={1000} animationIn='element' animationOut='element-out' variant='dark'> 
-            <MultiStepContactForm />
-        </ModalFullScreen>
+          <ModalFullScreen buttonText={TOEKOMST_VISIE.buttonLabel} className='mt-8 w-full md:w-fit' animationDuration={1000} animationIn='element' animationOut='element-out' variant='dark'> 
+              <MultiStepContactForm />
+          </ModalFullScreen>
+        </div>
       </div>
+
     </div>
   )
 }
