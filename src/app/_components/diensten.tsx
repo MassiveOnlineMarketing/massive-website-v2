@@ -26,11 +26,13 @@ export const Diensten = () => {
 
 
       {isMobile ? (
+        // mobile
         <div className='relative mt-8'>
           <SwipeProvider numberOfCards={6}>
             <SwipeArrowNav />
             <SwipeContent className='mt-4' >
               {DIENSTEN.cards.map((card, i) => (
+                // card
                 <div key={i} className={`px-3 pt-3 pb-4 rounded-[20px]  shadow-custom-lg h-full flex flex-col ${constants.glassFill}`}>
                   <div className="w-full h-[207px] bg-[url('/home/diensten-card-image-background.png')] bg-right">
                     <div className='flex items-center justify-center h-full w-full p-6'>
@@ -54,6 +56,7 @@ export const Diensten = () => {
           </SwipeProvider>
         </div>
       ) : (
+        // desktop
         <div className=' grid md:grid-cols-2 gap-6 mt-[52px]'>
           {DIENSTEN.cards.map((card, i) => (
             <div key={i} className={`px-3 pt-3 pb-4 rounded-[20px] shadow-custom-lg h-full flex flex-col ${constants.glassFill}`}>
