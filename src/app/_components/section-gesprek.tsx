@@ -20,9 +20,9 @@ const SectionGesprek = () => {
           <Paragraph>{SECTION_GESPREK.paragraph}</Paragraph>
           <div className='h-[1px] w-full bg-gray-300'></div>
         </div>
-        <ul className='mt-4'>
+        <ul className='mt-6'>
           {SECTION_GESPREK.list.map((item) => (
-            <li key={item} className='flex flex-row gap-4 items-center mt-3'>
+            <li key={item} className='flex flex-row gap-4 items-center mt-4'>
               <PurpleCheckmarkRound />
               <Paragraph className='font-medium'>{item}</Paragraph>
             </li>

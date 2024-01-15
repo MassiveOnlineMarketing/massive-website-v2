@@ -25,6 +25,9 @@ module.exports = {
         "2xl": "1400px",
       },
     },
+    borderRadius: {
+      "4xl": "32px"
+    },
     extend: {
       colors: {
         'primary': '#7857FF',

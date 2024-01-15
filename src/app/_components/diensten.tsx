@@ -30,7 +30,7 @@ export const Diensten = () => {
             <SwipeArrowNav />
             <SwipeContent className='mt-4' >
               {DIENSTEN.cards.map((card, i) => (
-                <div key={i} className={`px-3 pt-3 pb-4 rounded-[20px] backdrop-blur-md shadow-custom-lg h-full flex flex-col ${constants.glassFill}`}>
+                <div key={i} className={`px-3 pt-3 pb-4 rounded-[20px]  shadow-custom-lg h-full flex flex-col ${constants.glassFill}`}>
                   <div className='w-full h-[207px]'>
                     <Image src={card.image} width={614} height={214} alt={`${card.subHeading} card image `} className='h-full  md:w-[614px] md:h-[214px]' />
                   </div>
@@ -51,9 +51,9 @@ export const Diensten = () => {
           </SwipeProvider>
         </div>
       ) : (
-        <div className=' grid md:grid-cols-2 xl:grid-cols-3 gap-6 mt-[52px]'> 
+        <div className=' grid md:grid-cols-2 gap-6 mt-[52px]'> 
           {DIENSTEN.cards.map((card, i) => (
-              <div key={i} className={`px-3 pt-3 pb-4 rounded-[20px] backdrop-blur-md shadow-custom-lg h-full flex flex-col ${constants.glassFill}`}>
+              <div key={i} className={`px-3 pt-3 pb-4 rounded-[20px] shadow-custom-lg h-full flex flex-col ${constants.glassFill}`}>
                 <Image src={card.image} width={614} height={214} alt={`${card.subHeading} card image`}  />
 
                 <div className='flex flex-col h-full justify-between'>

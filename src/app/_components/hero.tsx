@@ -12,7 +12,7 @@ import { MultiStepContactForm } from "@/features/contact-form/multistep/contact-
 
 const Hero = () => {
   return (
-    <div className='relative'>
+    <div className='relative pt-[120px] md:pt-[70px] md:pb-[70px]'>
       <div className={`md:pb-16 lg:pb-0 grid md:grid-cols-2 ${container.maxWidth}`}>
         <div className='my-auto lg:pb-[120px]'>
           <Title>

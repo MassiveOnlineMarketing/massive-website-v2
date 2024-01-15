@@ -8,11 +8,11 @@ import container from '@/styles/styles';
 
 const SectionOne = () => {
   return (
-    <div className={`relative h-full pt-10 lg:pt-[280px] mb-[176px] ${container.gutter} mx-4 md:mx-0`}>
+    <div className={`relative h-full pt-[192px] lg:pt-[280px] mb-[176px] ${container.gutter} mx-4 md:mx-0`}>
         <Image src={'/home/grand-mark-pattern-background.png'} className="absolute top-0 left-0 w-full -z-10" width={1920} height={543} alt='grand mark pattern background' />
         
         <SectionOneSvg className='md:block mx-auto hidden' />
-        <Title className="pt-[100px] max-w-[685px] mx-auto md:text-center mt-10">
+        <Title className=" max-w-[685px] mx-auto md:text-center mt-10">
           <Heading level="h2" size='4xl' colorSchemeHighlight='gradient-fade-primary' highlight="zakelijke ambities" >{SECTION_ONE.heading}</Heading>
           <Paragraph>{SECTION_ONE.paragraph}</Paragraph>
         </Title>

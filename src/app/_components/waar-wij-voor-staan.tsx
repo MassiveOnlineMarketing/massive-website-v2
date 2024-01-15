@@ -14,7 +14,7 @@ const WaarWijVoorStaan = () => {
 
 
   return (
-    <div className='relative pt-[356px] mt-[-250px] pb-[130px]'>
+    <div className='relative pt-[381px] mt-[-225px] pb-[130px]'>
       <Image src={'/home/waar-wij-voor-staan-background.jpg'} width={1920} height={1068} alt='waar wij voor staan background' className='absolute top-0 left-0 h-full w-full object-cover -z-10' />
       <ArrowUpWaarWijVoorStaanSvg className='absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2' />
 

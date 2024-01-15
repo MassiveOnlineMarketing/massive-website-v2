@@ -63,7 +63,8 @@ const AccordionContent: React.FC<AccordionContentProps> = ({ children }) => {
         <div ref={contentRef} className={cn('max-h-0 overflow-hidden transition-all duration-300 ease-out text-black px-4',
             // `px-${tailwindPadding}  `,
             `${expand ? `pb-4` : ''}`)}
-        >
+        >   
+            {expand ? <div className="absolute -z-20 top-0 -left-5 h-full w-8 rounded-[14px] blur-md bg-gradient-to-t from-[#FFCFA3]/25 from-5.48% via-[#C176FC]/25 via-24.47% via-[#9076FC]/25 via-54.38% to-[#C6B8FF]/25 to-90.5%">test</div> : ''}
             {children}
         </div>
     );
