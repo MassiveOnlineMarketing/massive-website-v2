@@ -39,7 +39,7 @@ export const Diensten = () => {
                   </div>
 
                   <div className='flex flex-col h-full justify-between'>
-                    <Title className='mt-3'>
+                    <Title className='mt-3 gap-2'>
                       <SubHeading level='h4' size='sm' className='font-normal flex flex-row gap-[10px] py-[6px] items-center'>{card.icon} {card.subHeading}</SubHeading>
                       <Heading level='h5' size='2xl'>{card.heading}</Heading>
                       <Paragraph>{card.paragraph}</Paragraph>
@@ -58,7 +58,7 @@ export const Diensten = () => {
           {DIENSTEN.cards.map((card, i) => (
             <div key={i} className={`px-3 pt-3 pb-4 rounded-[20px] shadow-custom-lg h-full flex flex-col ${constants.glassFill}`}>
 
-              <div className="w-full h-[214px] rounded-[12px] bg-[url('/home/diensten-card-image-background.png')] bg-right">
+              <div className="w-full min-h-[214px] rounded-[12px] bg-[url('/home/diensten-card-image-background.png')] bg-right">
                 <div className='flex items-center justify-center h-full w-full p-6'>
                   {card.insideImage}
                 </div>
@@ -66,7 +66,7 @@ export const Diensten = () => {
               {/* <Image src={card.image} width={614} height={214} alt={`${card.subHeading} card image`} /> */}
 
               <div className='flex flex-col h-full justify-between'>
-                <Title className='mt-3 px-3'>
+                <Title className='mt-3 px-3 gap-2'>
                   <SubHeading level='h4' size='sm' className='font-normal flex flex-row gap-[10px] py-[6px] items-center'>{card.icon} {card.subHeading}</SubHeading>
                   <Heading level='h5' size='2xl'>{card.heading}</Heading>
                   <Paragraph>{card.paragraph}</Paragraph>
@@ -92,21 +92,21 @@ const DIENSTEN = {
   cards: [
     {
       image: '/home/diensten-card-image-background.png',
-      insideImage: <DienstenWebsite className='max-w-[462px]' />,
+      insideImage: <DienstenWebsite className='max-w-[462px] max-h-[148px]' />,
       icon: <ComputerDesktopIcon className='w-5 h-5' />,
       subHeading: 'Zakelijke Website',
       heading: 'Website Ontwikkeling',
       paragraph: 'Maak indruk met onze op maat gemaakte websites. Van responsieve ontwerpen tot geavanceerde functionaliteiten, wij bouwen websites die niet alleen mooi zijn, maar ook presteren.',
-      buttonLabel: 'Ontdek onze Dienst',
+      buttonLabel: 'Neem Contact op',
     },
     {
       image: '/home/diensten-card-image-background.png',
-      insideImage: <DiensetenWebshop className='max-w-[500px]' />,
+      insideImage: <DiensetenWebshop className='max-w-[500px] max-h-[148px]' />,
       icon: <AcademicCapIcon className='w-5 h-5' />,
       subHeading: 'Webshop',
       heading: 'eCommerce-oplossingen',
       paragraph: 'Verander bezoekers in kopers met onze geoptimaliseerde eCommerce-platforms. Wij creëren gebruikersvriendelijke webshops die de verkoop stimuleren en klantloyaliteit opbouwen.',
-      buttonLabel: 'Ontdek onze Dienst',
+      buttonLabel: 'Neem Contact op',
     },
     {
       image: '/home/diensten-card-image-background.png',
@@ -115,7 +115,7 @@ const DIENSTEN = {
       subHeading: 'SEO',
       heading: 'Zoekmachineoptimalisatie',
       paragraph: 'Verhoog uw online zichtbaarheid met onze strategische SEO-diensten. Wij optimaliseren uw website voor hogere rankings en meer organisch verkeer.',
-      buttonLabel: 'Ontdek onze Dienst',
+      buttonLabel: 'Neem Contact op',
     },
     {
       image: '/home/diensten-card-image-background.png',
@@ -124,25 +124,25 @@ const DIENSTEN = {
       subHeading: 'SEA',
       heading: 'Zoekmachineadverteren (SEA)',
       paragraph: 'Bereik uw doelgroep effectief met onze gerichte advertentiestrategieën. Van Google Ads tot sociale media campagnes, wij helpen u om zichtbaar te zijn waar uw klanten zijn.',
-      buttonLabel: 'Ontdek onze Dienst',
+      buttonLabel: 'Neem Contact op',
     },
     {
       image: '/home/diensten-card-image-background.png',
-      insideImage: <DienstenCMS className='max-w-[469px]' />,
+      insideImage: <DienstenCMS className='max-w-[469px] max-h-[148px]' />,
       icon: <ComputerDesktopIcon className='w-5 h-5' />,
-      subHeading: 'Zakelijke Website',
-      heading: 'Content Management Systemen (CMS)',
+      subHeading: 'CMS',
+      heading: 'Content Management Systemen',
       paragraph: 'Neem de controle over uw content met onze krachtige CMS-oplossingen. Wij zorgen voor gebruiksvriendelijke systemen die u volledige controle geven over uw websitecontent',
-      buttonLabel: 'Ontdek onze Dienst',
+      buttonLabel: 'Neem Contact op',
     },
     {
       image: '/home/diensten-card-image-background.png',
-      insideImage: <DienstenStrategie className='max-w-[358px]' />,
+      insideImage: <DienstenStrategie className='max-w-[358px] max-h-[148px]' />,
       icon: <AcademicCapIcon className='w-5 h-5' />,
       subHeading: 'Webshop',
       heading: 'Digitale Strategieontwikkeling',
       paragraph: '"Laat uw bedrijf groeien met onze doordachte digitale strategieën. Wij helpen u bij het bepalen van doelen, het identificeren van kansen en het implementeren van effectieve digitale plannen.',
-      buttonLabel: 'Ontdek onze Dienst',
+      buttonLabel: 'Neem Contact op',
     }
 
   ]
