@@ -12,14 +12,14 @@ import { AchterGrondFAQ } from '../_assets';
 
 const Faq = () => {
   return (
-    <div className={`relative mt-[100px] pb-[176px] flex flex-col max-w-[720px] mx-auto ${container.gutter} overflow-hidden`}>
+    <div className={`relative mt-[100px] pb-[176px] flex flex-col  ${container.gutter} overflow-hidden`}>
       <AchterGrondFAQ className='absolute bottom-0 left-1/2 -translate-x-1/2 -z-10' />
 
       <Title className='items-center mb-12'>
         <SubHeading level='h2' size='sm' variant='pill' type='icon' colorScheme='glass' className='pr-6'> <QuestionMarkCircleIcon className='w-6 h-6' /> {FAQ.title.subHeading}</SubHeading>
         <Heading level='h3' size='2xl' className='text-2xl'>{FAQ.title.heading}</Heading>
       </Title>
-      <AccordionContainer>
+      <AccordionContainer className='max-w-[750px]'>
         {FAQ.accordion.map((item, index) => (
           <Accordion key={index} className={`${constants.glassFill} bg-white backdrop-blur-lg rounded-xl shadow-custom-lg  test-gradient relative`} >
             <AccordionHeader level='h4' size='lg' className="rounded-lg text-gray-800 p-4 font-medium text-base text-left md:text-center" activeClassName='text-primary'>{item.header}</AccordionHeader>

@@ -1,5 +1,6 @@
 'use client'
 
+import { cn } from "@/lib/utils";
 import React from "react"
 import { useMediaQuery } from "react-responsive"
 
@@ -10,7 +11,7 @@ interface AccordionProps {
     padding?: number;
 }
 
-export const AccordionContainer: React.FC<{ children: React.ReactNode, testPadding?: string }> = ({ children, testPadding }) => {
+export const AccordionContainer: React.FC<{ children: React.ReactNode, className?: string }> = ({ children, className }) => {
     const [openAccordion, setOpenAccordion] = React.useState<number | null>(null);
     const isMobile = useMediaQuery({ query: '(max-width: 768px)' });
 
@@ -27,7 +28,10 @@ export const AccordionContainer: React.FC<{ children: React.ReactNode, testPaddi
 
 
     return (
-        <div className={`mx-auto flex flex-col gap-2 max-w-[950px] ${testPadding}`}>
+        <div className={cn(
+            'mx-auto flex flex-col gap-2',
+            className
+        )}>
             {clonedChildren}
         </div>
     );
