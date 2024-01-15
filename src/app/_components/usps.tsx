@@ -6,8 +6,8 @@ import { UspsOneSvg } from '../_assets'
 
 export const Usps = () => {
   return (
-    <div className={` ${container.gutter}`}>
-      <div className={` mt-[60px] md:mt-[130px] px-6 md:px-12 py-12 md:py-24 rounded-[20px] ${container.maxWidth} shadow-inner bg-[url('/home/gradient-background-usps.jpg')] bg-cover bg-center`}>
+    <div className={` ${container.gutter} ${container.maxWidth}`}>
+      <div className={` mt-[60px] md:mt-[130px] px-6 md:px-12 py-12 md:py-24 rounded-[20px]  shadow-inner bg-[url('/home/gradient-background-usps.jpg')] bg-cover bg-center`}>
         <Title className='max-w-[750px] mx-auto md:text-center md:items-center'>
           <SubHeading level='h2' size='sm' colorScheme='gradient-primary' className='pt-[6px]'>{USPS.title.subHeading}</SubHeading>	
           <Heading level='h3' size='2xl'>{USPS.title.heading}</Heading>

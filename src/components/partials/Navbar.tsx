@@ -9,6 +9,9 @@ import { MassiveLogoColor } from '@/assets/branding';
 
 import { Button } from '../ui/button';
 
+import ModalFullScreen from "@/features/modal/FullScreenModal";
+import { MultiStepContactForm } from "@/features/contact-form/multistep/contact-form";
+
 interface DrawerProps {
   isOpen: boolean;
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
@@ -33,7 +36,11 @@ const Drawer = ({ isOpen, setIsOpen }: DrawerProps) => {
         <li>Process</li>
         <li>Producten</li>
         <li>Over ons</li>
-        <li><Button variant={'primary'}>Contact</Button></li>
+        <li>
+          <ModalFullScreen size='sm' variant={'primary'} buttonText='contact' animationDuration={1000} animationIn='element' animationOut='element-out'>
+            <MultiStepContactForm />
+          </ModalFullScreen>
+        </li>
       </ul>
     </div>
   );
@@ -72,11 +79,12 @@ const NavbarTwo = () => {
 
   return (
     <nav>
-      <div className={`fixed top-0 w-full z-50 ${constants.glassFill}  transition-transform duration-300 ease-in-out ${navbarStyle}`}>
+      <div className={`fixed top-0 w-full z-50 ${constants.glassFill} border-b-[1px] border-white shadow-sm  transition-transform duration-300 ease-in-out ${navbarStyle}`}>
         <div className='px-8 py-3  max-w-[1300px] mx-auto '>
           <div className=' justify-between flex flex-row '>
             <MassiveLogoColor className="w-14" />
 
+            {/* hamburger */}
             <button onClick={() => setIsOpen(!isOpen)} className="md:hidden">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="h-6 w-6">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={isOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"} />
@@ -90,10 +98,14 @@ const NavbarTwo = () => {
               <li>Over ons</li>
             </ul>
 
-            <Button variant={'primary'} className="md:block hidden">Contact</Button>
+            {/* <Button size='sm' variant={'primary'} className="md:block hidden">Contact</Button> */}
+            <ModalFullScreen size='sm' variant={'primary'} buttonText='contact' className='md:block hidden' animationDuration={1000} animationIn='element' animationOut='element-out'>
+              <MultiStepContactForm />
+            </ModalFullScreen>
           </div>
         </div>
       </div>
+      {/* mobile nav */}
       <Drawer isOpen={isOpen} setIsOpen={setIsOpen} />
     </nav>
   )

@@ -10,8 +10,8 @@ import { MultiStepContactForm } from "@/features/contact-form/multistep/contact-
 
 const ToekomstVisie = () => {
   return (
-    <div className='px-4'>
-      <div className={`mt-[100px] relative overflow-hidden rounded-[32px] shadow-custom-lg   ${container.maxWidtht} dark-border-gradient z-10`}>
+    <div className={`px-4 ${container.maxWidth}`}>
+      <div className={`mt-[100px] relative overflow-hidden rounded-[32px] shadow-custom-lg dark-border-gradient z-10`}>
         <div className=' px-6 md:px-12 pt-12 pb-6 md:py-[82px] gradient-toekomstvisie '>
           <Image src='/home/toekomstvisie-en-ambitie-background.png' width={977} height={484} alt='toekomstvisie en ambitie background' className='absolute top-0 right-0 h-full' />
 

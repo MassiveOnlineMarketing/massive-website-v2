@@ -14,13 +14,21 @@ import SectionGesprek from "./_components/section-gesprek";
 import ToekomstVisie from "./_components/toekomst-visie";
 import WaarWijVoorStaan from "./_components/waar-wij-voor-staan";
 import Faq from "./_components/faq";
+import container from "@/styles/styles";
 
 
 
 
 export default function Home() {
   return (
-    <main className="w-full overflow-hidden">
+    <main className="relative w-full overflow-hidden">
+      {/* verticale lijnen */}
+      <div className="absolute w-full h-full top-0 left-0">
+        <div className="relative h-full w-full flex items-center justify-center">
+          <div className={`absolute h-full w-full border-l-[1px] border-r-[1px] border-gray-200  -z-10 max-w-[1300px]`}>
+           </div>
+        </div>
+      </div>
 
       <div className="relative">
         <GridBackground className='absolute top-0 left-0 -z-10' />
@@ -31,9 +39,9 @@ export default function Home() {
         <Hero />
 
         <Image src={'/home/mesh-gradient-hero-1920x1090.jpg'} width={1920} height={1090} alt='hero background gradient' className="absolute top-0 left-0 -z-20 h-full w-full mx-auto" />
-      
+
         <div className="absolute -bottom-[145px] w-full ">
-          <Banner  />
+          <Banner />
         </div>
       </div>
 
@@ -54,7 +62,7 @@ export default function Home() {
       <WaarWijVoorStaan />
 
       <Faq />
-      
+
     </main>
   )
 }
