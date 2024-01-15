@@ -25,12 +25,12 @@ module.exports = {
         "2xl": "1400px",
       },
     },
-    borderRadius: {
-      "4xl": "32px"
-    },
     extend: {
       colors: {
         'primary': '#7857FF',
+      },
+      borderRadius: {
+        "4xl": "32px"
       },
       boxShadow: {
         'base': '0px 1px 2px 0px rgba(0, 0, 0, 0.06), 0px 1px 3px 0px rgba(0, 0, 0, 0.10)',

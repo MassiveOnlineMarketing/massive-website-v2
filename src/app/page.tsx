@@ -15,13 +15,14 @@ import ToekomstVisie from "./_components/toekomst-visie";
 import WaarWijVoorStaan from "./_components/waar-wij-voor-staan";
 import Faq from "./_components/faq";
 import container from "@/styles/styles";
+import { MeshGradientHero } from "./_assets";
 
 
 
 
 export default function Home() {
   return (
-    <main className="relative w-full overflow-hidden">
+    <main className="relative w-full">
       {/* verticale lijnen */}
       <div className="absolute w-full h-full top-0 left-0">
         <div className="relative h-full w-full flex items-center justify-center">
@@ -31,7 +32,7 @@ export default function Home() {
       </div>
 
       <div className="relative">
-        <GridBackground className='absolute top-0 left-0 -z-10' />
+        
 
         <header>
           <Navbar />

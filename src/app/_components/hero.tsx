@@ -1,4 +1,4 @@
-import { WhiteWave } from '@/assets/backgrounds'
+import { GridBackground, WhiteWave } from '@/assets/backgrounds'
 import { Button } from '@/components/ui/button'
 import Title from '@/components/ui/typography/title'
 import { Heading, Paragraph, SubHeading } from '@/components/ui/typography/typography'
@@ -13,7 +13,10 @@ import { MultiStepContactForm } from "@/features/contact-form/multistep/contact-
 const Hero = () => {
   return (
     <div className='relative pt-[120px] md:pt-[70px] md:pb-[70px]'>
-      <div className={`md:pb-16 lg:pb-0 grid md:grid-cols-2 ${container.maxWidth}`}>
+
+      <div className={`relative md:pb-16 lg:pb-0 grid md:grid-cols-2 ${container.maxWidth}`}>
+      <GridBackground className='absolute top-0 left-0 -z-10' />
+
         <div className='my-auto lg:pb-[120px]'>
           <Title>
             <SubHeading level="h1" size="sm" colorScheme="glass" variant="pill" className='text-primary'>{HERO.subheading}</SubHeading>
@@ -26,7 +29,7 @@ const Hero = () => {
           {/* <Button variant='primary' className='mt-6'>{HERO.buttonLabel}</Button> */}
         </div>
         
-        <Image src={'/home/hero-image-home.png'} width={750} height={730} alt='klant die blij zijn website laat zien' className='py-6 md:py-[104px]' />
+        <Image src={'/home/massive-hero-header-man-met-laptop-662x755-XL.png'} width={750} height={730} alt='klant die blij zijn website laat zien' className='py-6 md:py-[104px]' />
       </div>
 
       <WhiteWave className='absolute bottom-0 left-0 -z-10' />	

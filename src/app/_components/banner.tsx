@@ -18,7 +18,7 @@ export const Banner = () => {
           <Button size='sm' variant='glass' className='mt-6 pr-[10px]'>{BANNER.buttonLabel} <ArrowLongRightIcon className='w-4 h-4'/></Button>
         </div>
 
-        <Image src={'/home/banner-image.png'} width={447} height={295} alt='banner image' className='lg:block ml-auto mt-auto hidden'/>
+        <Image src={'/home/massive-isometric-image-mini-modal-444x257-XL.jpg'} width={447} height={295} alt='banner image' className='lg:block ml-auto mt-auto hidden'/>
       </div>
 
         <BannerSvg className='md:block absolute right-[-29px] bottom-[-39px] hidden' />

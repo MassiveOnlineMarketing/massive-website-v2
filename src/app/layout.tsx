@@ -89,7 +89,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="nl">
-      <body className={inter.className}>
+      <body className={`${inter.className} overflow-x-hidden`}>
 
 
         
@@ -97,9 +97,9 @@ export default function RootLayout({
           {children}
         </Providers>
 
-        <footer>
+        <div className='w-full overflow-hidden'>
           <Footer />
-        </footer>
+        </div>
         
 
         <LoadCookies />

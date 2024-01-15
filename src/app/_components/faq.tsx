@@ -8,10 +8,13 @@ import { MultiStepContactForm } from "@/features/contact-form/multistep/contact-
 import Title from '@/components/ui/typography/title';
 import { Heading, SubHeading } from '@/components/ui/typography/typography';
 import { QuestionMarkCircleIcon } from '@heroicons/react/24/outline';
+import { AchterGrondFAQ } from '../_assets';
 
 const Faq = () => {
   return (
-    <div className={`mt-[100px] flex flex-col max-w-[720px] mx-auto ${container.gutter}`}>
+    <div className={`relative mt-[100px] pb-[176px] flex flex-col max-w-[720px] mx-auto ${container.gutter} overflow-hidden`}>
+      <AchterGrondFAQ className='absolute bottom-0 left-1/2 -translate-x-1/2 -z-10' />
+
       <Title className='items-center mb-12'>
         <SubHeading level='h2' size='sm' variant='pill' type='icon' colorScheme='glass' className='pr-6'> <QuestionMarkCircleIcon className='w-6 h-6' /> {FAQ.title.subHeading}</SubHeading>
         <Heading level='h3' size='2xl' className='text-2xl'>{FAQ.title.heading}</Heading>

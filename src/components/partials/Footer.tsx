@@ -2,13 +2,14 @@ import { MassiveLogoColor } from '@/assets/branding'
 import { FacebookGray, InstagramGray, LinkedinGray, TwitterGray } from '@/assets/icons'
 import Link from 'next/link'
 import React from 'react'
+import { Paragraph } from '../ui/typography/typography'
 
 const WEBSITE_URL = process.env.WEBSITE_URL
 
 
 export default function Footer() {
   return (
-    <div className='relative pt-[262px] mt-[167px] max-w-[1920px] mx-auto'>
+    <div className='relative pt-[262px] max-w-[1920px] mx-auto'>
       
       <footer
         className={`relative lg:w-[93%] mx-auto `}
@@ -21,7 +22,7 @@ export default function Footer() {
         <div
           className={`relative rounded-t-4xl bg-gray-50 px-6 pt-[52px] md:px-[50px] lg:px-[104px] lg:pt-24`}
         >
-          <div className='grid-flow-cols grid gap-12 grid-cols-2 xl:gap-8'>
+          <div className='grid-flow-cols grid gap-12 md:grid-cols-2 xl:gap-8'>
             {/* <div className='gap grid grid-cols-2 gap-x-4 gap-y-10 md:grid-cols-4 xl:order-1 xl:col-span-2 xl:mt-0 xl:gap-8'> */}
             <div className='flex flex-col justify-between gap-12  xl:gap-[160px]  '>
               <div>
@@ -35,6 +36,7 @@ export default function Footer() {
                     {' '}
                     {/*${styles.paragraafSmall}*/}
                     {/* <RenderText content={footerData.slogan} /> */}
+                    <Paragraph size='sm' className='text-gray-600'>Onze visie is om de grenzen van traditionele marketing te verleggen om samen met onze partners nieuwe hoogtes te bereiken.</Paragraph>
                   </p>
                 </div>
               </div>
@@ -64,7 +66,7 @@ export default function Footer() {
               <ul role='list' className='mt-2 space-y-2'>
                 {footerData.diensten.list.map((item) => (
                   <li key={item.name}>
-                    <Link href={item.href} className={``}>
+                    <Link href={item.href} className={`text-gray-600`}>
                       {item.name}
                     </Link>
                   </li>

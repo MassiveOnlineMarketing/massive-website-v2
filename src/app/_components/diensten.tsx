@@ -11,6 +11,7 @@ import Image from 'next/image'
 import React from 'react'
 
 import { useMediaQuery } from 'react-responsive'
+import { DiensetenWebshop, DienstenCMS, DienstenSEA, DienstenSEO, DienstenStrategie, DienstenWebsite } from '../_assets'
 
 export const Diensten = () => {
   const isMobile = useMediaQuery({ query: '(max-width: 768px)' })
@@ -22,7 +23,7 @@ export const Diensten = () => {
         <Heading level='h3' size='4xl'>{DIENSTEN.title.heading}</Heading>
         <Paragraph size='base'>{DIENSTEN.title.paragraph}</Paragraph>
       </Title>
-      
+
 
       {isMobile ? (
         <div className='relative mt-8'>
@@ -31,8 +32,10 @@ export const Diensten = () => {
             <SwipeContent className='mt-4' >
               {DIENSTEN.cards.map((card, i) => (
                 <div key={i} className={`px-3 pt-3 pb-4 rounded-[20px]  shadow-custom-lg h-full flex flex-col ${constants.glassFill}`}>
-                  <div className='w-full h-[207px]'>
-                    <Image src={card.image} width={614} height={214} alt={`${card.subHeading} card image `} className='h-full  md:w-[614px] md:h-[214px]' />
+                  <div className="w-full h-[207px] bg-[url('/home/diensten-card-image-background.png')] bg-right">
+                    <div className='flex items-center justify-center h-full w-full p-6'>
+                      {card.insideImage}
+                    </div>
                   </div>
 
                   <div className='flex flex-col h-full justify-between'>
@@ -51,22 +54,28 @@ export const Diensten = () => {
           </SwipeProvider>
         </div>
       ) : (
-        <div className=' grid md:grid-cols-2 gap-6 mt-[52px]'> 
+        <div className=' grid md:grid-cols-2 gap-6 mt-[52px]'>
           {DIENSTEN.cards.map((card, i) => (
-              <div key={i} className={`px-3 pt-3 pb-4 rounded-[20px] shadow-custom-lg h-full flex flex-col ${constants.glassFill}`}>
-                <Image src={card.image} width={614} height={214} alt={`${card.subHeading} card image`}  />
+            <div key={i} className={`px-3 pt-3 pb-4 rounded-[20px] shadow-custom-lg h-full flex flex-col ${constants.glassFill}`}>
 
-                <div className='flex flex-col h-full justify-between'>
-                  <Title className='mt-3 px-3'>
-                    <SubHeading level='h4' size='sm' className='font-normal flex flex-row gap-[10px] py-[6px] items-center'>{card.icon} {card.subHeading}</SubHeading>
-                    <Heading level='h5' size='2xl'>{card.heading}</Heading>
-                    <Paragraph>{card.paragraph}</Paragraph>
-                  </Title>
-                  <Button variant='glass' size='sm' className='mt-3 mx-3 pr-[10px]'>{card.buttonLabel} <ChevronRightIcon className='w-4 h-4' /></Button>
-
+              <div className="w-full h-[214px] rounded-[12px] bg-[url('/home/diensten-card-image-background.png')] bg-right">
+                <div className='flex items-center justify-center h-full w-full p-6'>
+                  {card.insideImage}
                 </div>
               </div>
-            ))}
+              {/* <Image src={card.image} width={614} height={214} alt={`${card.subHeading} card image`} /> */}
+
+              <div className='flex flex-col h-full justify-between'>
+                <Title className='mt-3 px-3'>
+                  <SubHeading level='h4' size='sm' className='font-normal flex flex-row gap-[10px] py-[6px] items-center'>{card.icon} {card.subHeading}</SubHeading>
+                  <Heading level='h5' size='2xl'>{card.heading}</Heading>
+                  <Paragraph>{card.paragraph}</Paragraph>
+                </Title>
+                <Button variant='glass' size='sm' className='mt-3 mx-3 pr-[10px]'>{card.buttonLabel} <ChevronRightIcon className='w-4 h-4' /></Button>
+
+              </div>
+            </div>
+          ))}
         </div>
       )}
 
@@ -83,6 +92,7 @@ const DIENSTEN = {
   cards: [
     {
       image: '/home/diensten-card-image-background.png',
+      insideImage: <DienstenWebsite className='max-w-[462px]' />,
       icon: <ComputerDesktopIcon className='w-5 h-5' />,
       subHeading: 'Zakelijke Website',
       heading: 'Website Ontwikkeling',
@@ -91,6 +101,7 @@ const DIENSTEN = {
     },
     {
       image: '/home/diensten-card-image-background.png',
+      insideImage: <DiensetenWebshop className='max-w-[500px]' />,
       icon: <AcademicCapIcon className='w-5 h-5' />,
       subHeading: 'Webshop',
       heading: 'eCommerce-oplossingen',
@@ -99,6 +110,7 @@ const DIENSTEN = {
     },
     {
       image: '/home/diensten-card-image-background.png',
+      insideImage: <DienstenSEO className='max-w-[302px]' />,
       icon: <MagnifyingGlassIcon className='w-5 h-5' />,
       subHeading: 'SEO',
       heading: 'Zoekmachineoptimalisatie',
@@ -107,6 +119,7 @@ const DIENSTEN = {
     },
     {
       image: '/home/diensten-card-image-background.png',
+      insideImage: <DienstenSEA className='max-w-[290px]' />,
       icon: <AcademicCapIcon className='w-5 h-5' />,
       subHeading: 'SEA',
       heading: 'Zoekmachineadverteren (SEA)',
@@ -115,6 +128,7 @@ const DIENSTEN = {
     },
     {
       image: '/home/diensten-card-image-background.png',
+      insideImage: <DienstenCMS className='max-w-[469px]' />,
       icon: <ComputerDesktopIcon className='w-5 h-5' />,
       subHeading: 'Zakelijke Website',
       heading: 'Content Management Systemen (CMS)',
@@ -123,6 +137,7 @@ const DIENSTEN = {
     },
     {
       image: '/home/diensten-card-image-background.png',
+      insideImage: <DienstenStrategie className='max-w-[358px]' />,
       icon: <AcademicCapIcon className='w-5 h-5' />,
       subHeading: 'Webshop',
       heading: 'Digitale Strategieontwikkeling',

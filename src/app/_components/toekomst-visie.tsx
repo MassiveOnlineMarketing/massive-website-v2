@@ -13,7 +13,7 @@ const ToekomstVisie = () => {
     <div className={`px-4 ${container.maxWidth}`}>
       <div className={`mt-[100px] relative overflow-hidden rounded-[32px] shadow-custom-lg dark-border-gradient z-10`}>
         <div className=' px-6 md:px-12 pt-12 pb-6 md:py-[82px] gradient-toekomstvisie '>
-          <Image src='/home/toekomstvisie-en-ambitie-background.png' width={977} height={484} alt='toekomstvisie en ambitie background' className='absolute top-0 right-0 h-full' />
+          <Image src='/home/massive-toekomstvisie-background-image-977x549-XL.png' width={977} height={484} alt='toekomstvisie en ambitie background' className='absolute top-0 right-0 h-full' />
 
           <Title className='relative z-20 max-w-[600px]'>
             <SubHeading level="h2" size='sm' colorScheme='glass-dark' variant='pill'>{TOEKOMST_VISIE.subHeading}</SubHeading>

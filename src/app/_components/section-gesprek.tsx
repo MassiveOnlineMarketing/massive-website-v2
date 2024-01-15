@@ -35,7 +35,7 @@ const SectionGesprek = () => {
 
       </div>
 
-      <Image src={'/home/gratis-advies-afbeelding-persoon-belt-met-massive.png'} width={650} height={618} alt='persoon die belt met massive'  />
+      <Image src={'/home/massive-gratis-consulting-650x618-XL.png'} width={650} height={618} alt='persoon die belt met massive'  />
     </div>
   )
 }
