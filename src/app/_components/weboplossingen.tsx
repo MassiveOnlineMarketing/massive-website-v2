@@ -25,8 +25,8 @@ const Weboplossingen = () => {
 
           {/* img */}
           <div className='relative'>
-            <div className='mlg:absolute bottom-0 w-full' >
-              <CodeScreenWeb />
+            <div className='mt-6 mlg:mt-0 mlg:absolute bottom-0 w-full' >
+              <CodeScreenWeb className='shadow-custom-lg rounded-[20px]' />
               <Paragraph size='sm' className="mt-6 max-w-[550px]"> Nieuwste webtechnologieën met onze op maat gemaakte oplossingen, die een geavanceerde en toekomstbestendige online aanwezigheid garanderen.</Paragraph>
             </div>
           </div>

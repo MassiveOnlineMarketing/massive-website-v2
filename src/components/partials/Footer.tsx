@@ -30,14 +30,10 @@ export default function Footer() {
                   <Link href={`${WEBSITE_URL}/`}>
                     <MassiveLogoColor className='w-18 h-10' aria-label='Ga naar Massive Online Marketing Home pagina' />
                   </Link>
-                  <p
-                    className={`max-w-[330px] text-sm font-normal leading-5 text-gray-600 `}
-                  >
-                    {' '}
+
                     {/*${styles.paragraafSmall}*/}
                     {/* <RenderText content={footerData.slogan} /> */}
-                    <Paragraph size='sm' className='text-gray-600'>Onze visie is om de grenzen van traditionele marketing te verleggen om samen met onze partners nieuwe hoogtes te bereiken.</Paragraph>
-                  </p>
+                    <Paragraph size='sm' className='`max-w-[330px] text-sm font-normal leading-5 text-gray-600 '>Onze visie is om de grenzen van traditionele marketing te verleggen om samen met onze partners nieuwe hoogtes te bereiken.</Paragraph>
                 </div>
               </div>
 

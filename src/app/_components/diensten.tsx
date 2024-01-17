@@ -13,6 +13,10 @@ import React from 'react'
 import { useMediaQuery } from 'react-responsive'
 import { DiensetenWebshop, DienstenCMS, DienstenSEA, DienstenSEO, DienstenStrategie, DienstenWebsite } from '../_assets'
 
+
+import ModalFullScreen from "@/features/modal/FullScreenModal";
+import { MultiStepContactForm } from "@/features/contact-form/multistep/contact-form";
+
 export const Diensten = () => {
   const isMobile = useMediaQuery({ query: '(max-width: 768px)' })
 
@@ -46,8 +50,10 @@ export const Diensten = () => {
                       <Heading level='h5' size='2xl'>{card.heading}</Heading>
                       <Paragraph>{card.paragraph}</Paragraph>
                     </Title>
-                    <Button variant='glass' size='sm' className='mt-3 pr-[10px]'>{card.buttonLabel} <ChevronRightIcon className='w-4 h-4' /></Button>
 
+                    <ModalFullScreen variant='glass' size='sm' className='mt-3 mx-3 pr-[10px]' buttonText={card.buttonLabel} animationDuration={1000} animationIn='element' animationOut='element-out'>
+                      <MultiStepContactForm />
+                    </ModalFullScreen>
                   </div>
                 </div>
               ))}
@@ -74,7 +80,10 @@ export const Diensten = () => {
                   <Heading level='h5' size='2xl'>{card.heading}</Heading>
                   <Paragraph>{card.paragraph}</Paragraph>
                 </Title>
-                <Button variant='glass' size='sm' className='mt-3 mx-3 pr-[10px]'>{card.buttonLabel} <ChevronRightIcon className='w-4 h-4' /></Button>
+
+                <ModalFullScreen variant='glass' size='sm' className='mt-3 mx-3 pr-[10px]' buttonText={card.buttonLabel} animationDuration={1000} animationIn='element' animationOut='element-out'>
+                  <MultiStepContactForm />
+                </ModalFullScreen>
 
               </div>
             </div>
