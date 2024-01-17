@@ -1,21 +1,18 @@
 'use client'
 
-import { Button } from '@/components/ui/button'
 import Title from '@/components/ui/typography/title'
 import { Heading, Paragraph, SubHeading } from '@/components/ui/typography/typography'
 import { SwipeArrowNav, SwipeContent, SwipeDots, SwipeProvider } from '@/features/swipe'
-import container, { constants, styles } from '@/styles/styles'
-import { ComputerDesktopIcon, MagnifyingGlassIcon } from '@heroicons/react/20/solid'
-import { AcademicCapIcon, ChevronRightIcon } from '@heroicons/react/24/outline'
-import Image from 'next/image'
+import container, { constants } from '@/styles/styles'
+import { ChevronRightIcon, ComputerDesktopIcon, MagnifyingGlassIcon } from '@heroicons/react/20/solid'
+import { AcademicCapIcon } from '@heroicons/react/24/outline'
 import React from 'react'
 
 import { useMediaQuery } from 'react-responsive'
 import { DiensetenWebshop, DienstenCMS, DienstenSEA, DienstenSEO, DienstenStrategie, DienstenWebsite } from '../_assets'
 
 
-import ModalFullScreen from "@/features/modal/FullScreenModal";
-import { MultiStepContactForm } from "@/features/contact-form/multistep/contact-form";
+import { InternalAnchor } from '@/components/ui/link'
 
 export const Diensten = () => {
   const isMobile = useMediaQuery({ query: '(max-width: 768px)' })
@@ -36,26 +33,7 @@ export const Diensten = () => {
             <SwipeArrowNav />
             <SwipeContent className='mt-4' >
               {DIENSTEN.cards.map((card, i) => (
-                // card
-                <div key={i} className={`px-3 pt-3 pb-4 rounded-[20px]  shadow-custom-lg h-full flex flex-col ${constants.glassFill}`}>
-                  <div className="w-full h-[207px] bg-[url('/home/diensten-card-image-background.png')] bg-right">
-                    <div className='flex items-center justify-center h-full w-full p-6'>
-                      {card.insideImage}
-                    </div>
-                  </div>
-
-                  <div className='flex flex-col h-full justify-between'>
-                    <Title className='mt-3 gap-2'>
-                      <SubHeading level='h4' size='sm' className='font-normal flex flex-row gap-[10px] py-[6px] items-center'>{card.icon} {card.subHeading}</SubHeading>
-                      <Heading level='h5' size='2xl'>{card.heading}</Heading>
-                      <Paragraph>{card.paragraph}</Paragraph>
-                    </Title>
-
-                    <ModalFullScreen variant='glass' size='sm' className='mt-3 mx-3 pr-[10px]' buttonText={card.buttonLabel} animationDuration={1000} animationIn='element' animationOut='element-out'>
-                      <MultiStepContactForm />
-                    </ModalFullScreen>
-                  </div>
-                </div>
+                <MobileCard key={i} card={card} />
               ))}
             </SwipeContent>
             <SwipeDots className='mt-16' />
@@ -65,32 +43,73 @@ export const Diensten = () => {
         // desktop
         <div className=' grid md:grid-cols-2 gap-6 mt-[52px]'>
           {DIENSTEN.cards.map((card, i) => (
-            <div key={i} className={`px-3 pt-3 pb-4 rounded-[20px] shadow-custom-lg h-full flex flex-col ${constants.glassFill}`}>
-
-              <div className="w-full min-h-[214px] rounded-[12px] bg-[url('/home/diensten-card-image-background.png')] bg-right">
-                <div className='flex items-center justify-center h-full w-full p-6'>
-                  {card.insideImage}
-                </div>
-              </div>
-              {/* <Image src={card.image} width={614} height={214} alt={`${card.subHeading} card image`} /> */}
-
-              <div className='flex flex-col h-full justify-between'>
-                <Title className='mt-3 px-3 gap-2'>
-                  <SubHeading level='h4' size='sm' className='font-normal flex flex-row gap-[10px] py-[6px] items-center'>{card.icon} {card.subHeading}</SubHeading>
-                  <Heading level='h5' size='2xl'>{card.heading}</Heading>
-                  <Paragraph>{card.paragraph}</Paragraph>
-                </Title>
-
-                <ModalFullScreen variant='glass' size='sm' className='mt-3 mx-3 pr-[10px]' buttonText={card.buttonLabel} animationDuration={1000} animationIn='element' animationOut='element-out'>
-                  <MultiStepContactForm />
-                </ModalFullScreen>
-
-              </div>
-            </div>
+            <DesktopCard key={i} card={card} />
           ))}
         </div>
       )}
 
+    </div>
+  )
+}
+
+interface CardProps {
+  key: number
+  card: {
+    image: string
+    insideImage: React.ReactNode
+    icon: React.ReactNode
+    subHeading: string
+    heading: string
+    paragraph: string
+    buttonLabel: string
+  }
+}
+
+
+const MobileCard = ({ card }: CardProps) => {
+
+  return (
+    <div className={`px-3 pt-3 pb-4 rounded-[20px]  shadow-custom-lg h-full flex flex-col ${constants.glassFill}`}>
+      <div className="w-full h-[207px] bg-[url('/home/diensten-card-image-background.png')] bg-right">
+        <div className='flex items-center justify-center h-full w-full p-6'>
+          {card.insideImage}
+        </div>
+      </div>
+
+      <div className='flex flex-col h-full justify-between'>
+        <Title className='mt-3 gap-2'>
+          <SubHeading level='h4' size='sm' className='font-normal flex flex-row gap-[10px] py-[6px] items-center'>{card.icon} {card.subHeading}</SubHeading>
+          <Heading level='h5' size='2xl'>{card.heading}</Heading>
+          <Paragraph>{card.paragraph}</Paragraph>
+        </Title>
+
+        <InternalAnchor href='/contact' variant='glass' size='sm' className='mt-3 mx-3 pr-[10px] '> {card.buttonLabel} <ChevronRightIcon className='w-4 h-4' /></InternalAnchor>
+      </div>
+    </div>
+  )
+}
+
+
+const DesktopCard = ({ card }: CardProps) => {
+
+  return (
+    <div className={`px-3 pt-3 pb-4 rounded-[20px] shadow-custom-lg h-full flex flex-col ${constants.glassFill}`}>
+
+      <div className="w-full min-h-[214px] rounded-[12px] bg-[url('/home/diensten-card-image-background.png')] bg-right">
+        <div className='flex items-center justify-center h-full w-full p-6'>
+          {card.insideImage}
+        </div>
+      </div>
+
+      <div className='flex flex-col h-full justify-between'>
+        <Title className='mt-3 px-3 gap-2'>
+          <SubHeading level='h4' size='sm' className='font-normal flex flex-row gap-[10px] py-[6px] items-center'>{card.icon} {card.subHeading}</SubHeading>
+          <Heading level='h5' size='2xl'>{card.heading}</Heading>
+          <Paragraph>{card.paragraph}</Paragraph>
+        </Title>
+
+        <InternalAnchor href='/contact' variant='glass' size='sm' className='mt-3 mx-3 pr-[10px] '> {card.buttonLabel} <ChevronRightIcon className='w-4 h-4' /></InternalAnchor>
+      </div>
     </div>
   )
 }
@@ -104,7 +123,7 @@ const DIENSTEN = {
   cards: [
     {
       image: '/home/diensten-card-image-background.png',
-      insideImage: <DienstenWebsite className='max-w-[462px] max-h-[148px]' />,
+      insideImage: <DienstenWebsite className='max-w-[462px] max-h-[148px] w-full' />,
       icon: <ComputerDesktopIcon className='w-5 h-5' />,
       subHeading: 'Zakelijke Website',
       heading: 'Website Ontwikkeling',
@@ -113,7 +132,7 @@ const DIENSTEN = {
     },
     {
       image: '/home/diensten-card-image-background.png',
-      insideImage: <DiensetenWebshop className='max-w-[500px] max-h-[148px]' />,
+      insideImage: <DiensetenWebshop className='max-w-[500px] max-h-[148px] w-full' />,
       icon: <AcademicCapIcon className='w-5 h-5' />,
       subHeading: 'Webshop',
       heading: 'eCommerce-oplossingen',
@@ -122,7 +141,7 @@ const DIENSTEN = {
     },
     {
       image: '/home/diensten-card-image-background.png',
-      insideImage: <DienstenSEO className='max-w-[302px]' />,
+      insideImage: <DienstenSEO className='max-w-[302px] w-full' />,
       icon: <MagnifyingGlassIcon className='w-5 h-5' />,
       subHeading: 'SEO',
       heading: 'Zoekmachineoptimalisatie',
@@ -131,7 +150,7 @@ const DIENSTEN = {
     },
     {
       image: '/home/diensten-card-image-background.png',
-      insideImage: <DienstenSEA className='max-w-[290px]' />,
+      insideImage: <DienstenSEA className='max-w-[290px] w-full' />,
       icon: <AcademicCapIcon className='w-5 h-5' />,
       subHeading: 'SEA',
       heading: 'Zoekmachineadverteren (SEA)',
@@ -140,7 +159,7 @@ const DIENSTEN = {
     },
     {
       image: '/home/diensten-card-image-background.png',
-      insideImage: <DienstenCMS className='max-w-[469px] max-h-[148px]' />,
+      insideImage: <DienstenCMS className='max-w-[469px] max-h-[148px] w-full' />,
       icon: <ComputerDesktopIcon className='w-5 h-5' />,
       subHeading: 'CMS',
       heading: 'Content Management Systemen',
@@ -149,7 +168,7 @@ const DIENSTEN = {
     },
     {
       image: '/home/diensten-card-image-background.png',
-      insideImage: <DienstenStrategie className='max-w-[358px] max-h-[148px]' />,
+      insideImage: <DienstenStrategie className='max-w-[358px] max-h-[148px] w-full' />,
       icon: <AcademicCapIcon className='w-5 h-5' />,
       subHeading: 'Webshop',
       heading: 'Digitale Strategieontwikkeling',

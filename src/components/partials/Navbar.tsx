@@ -2,16 +2,10 @@
 
 import React, { useState, useEffect } from 'react'
 
-import container, { constants } from '@/styles/styles'
-import { GridBackground } from '@/assets/backgrounds'
+import { constants } from '@/styles/styles'
 import { MassiveLogoColor } from '@/assets/branding';
-
-
-import { Button } from '../ui/button';
-
-import ModalFullScreen from "@/features/modal/FullScreenModal";
-import { MultiStepContactForm } from "@/features/contact-form/multistep/contact-form";
 import Link from 'next/link';
+import { InternalAnchor } from '../ui/link';
 
 interface DrawerProps {
   isOpen: boolean;
@@ -32,15 +26,13 @@ const Drawer = ({ isOpen, setIsOpen }: DrawerProps) => {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
         </svg>
       </button>
-      <ul className="p-4  flex flex-col h-full gap-6">
+      <ul className="p-4 mt-20  flex flex-col h-full gap-6">
         {/* <li>Diensten</li>
         <li>Process</li>
         <li>Producten</li>
         <li>Over ons</li> */}
         <li>
-          <ModalFullScreen size='sm' variant={'primary'} buttonText='contact' animationDuration={1000} animationIn='element' animationOut='element-out'>
-            <MultiStepContactForm />
-          </ModalFullScreen>
+          <InternalAnchor href='/contact' size='sm' variant='primary' className='w-full'>Contact</InternalAnchor>
         </li>
       </ul>
     </div>
@@ -101,10 +93,7 @@ const NavbarTwo = () => {
               <li>Over ons</li> */}
             </ul>
 
-            {/* <Button size='sm' variant={'primary'} className="md:block hidden">Contact</Button> */}
-            <ModalFullScreen size='sm' variant={'primary'} buttonText='contact' className='md:block hidden' animationDuration={1000} animationIn='element' animationOut='element-out'>
-              <MultiStepContactForm />
-            </ModalFullScreen>
+            <InternalAnchor href='/contact' size='sm' variant='primary' className='md:block hidden'>Contact</InternalAnchor>
           </div>
         </div>
       </div>

@@ -5,6 +5,7 @@ import { ArrowLongRightIcon } from '@heroicons/react/20/solid'
 import Image from 'next/image'
 import React from 'react'
 import { BannerSvg } from '../_assets'
+import { InternalAnchor } from '@/components/ui/link'
 
 export const Banner = () => {
   return (
@@ -15,7 +16,8 @@ export const Banner = () => {
         <div className=' p-6 md:pt-12 md:pl-8 md:pb-8 max-w-[650px]'>
           <Heading level='h3' size='3xl' className='font-semibold' >{BANNER.heading}</Heading>
           <Paragraph size='base' className='mt-4' >{BANNER.paragraaf}</Paragraph>
-          <Button size='sm' variant='glass' className='mt-6 pr-[10px]'>{BANNER.buttonLabel} <ArrowLongRightIcon className='w-4 h-4'/></Button>
+          {/* <Button size='sm' variant='glass' className='mt-6 pr-[10px]'>{BANNER.buttonLabel} <ArrowLongRightIcon className='w-4 h-4'/></Button> */}
+          <InternalAnchor href='/contact'  size='sm' variant='glass' className='mt-6 pr-[10px]'>{BANNER.buttonLabel} <ArrowLongRightIcon className='w-4 h-4'/> </InternalAnchor>
         </div>
 
         <Image src={'/home/massive-isometric-image-mini-modal-444x257-XL.jpg'} width={447} height={295} alt='banner image' className='lg:block ml-auto mt-auto hidden'/>
