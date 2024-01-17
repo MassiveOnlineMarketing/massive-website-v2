@@ -5,8 +5,8 @@ import { SoftwareSircle } from '../_assets'
 
 const Intergratie = () => {
   return (
-    <div className='relative flex items-center justify-center'>
-      <SoftwareSircle className=' max-w-[915px] -z-10' />
+    <div className='py-10 md:py-0 relative flex items-center justify-center'>
+      <SoftwareSircle className=' max-w-[915px] -z-10 w-full ' />
 
       <Title className=' absolute max-w-[362px] text-center flex items-center'>
         <SubHeading level='h2' size='sm' variant='pill' colorScheme='glass'>{INTERGRATIE.subHeading}</SubHeading>

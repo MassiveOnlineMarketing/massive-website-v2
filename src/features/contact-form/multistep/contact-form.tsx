@@ -31,6 +31,7 @@ import { ModalContext } from '@/features/modal/FullScreenModal';
 import { GreenCheckmarkRound } from '@/assets/icons';
 import { constants } from '@/styles/styles';
 import Image from 'next/image';
+import Card from './card';
 
 type Inputs = z.infer<typeof formSchema>;
 
@@ -188,29 +189,7 @@ export const MultiStepContactForm: React.FC<MultiStepContactForm> = ({ className
             // 'grid md:grid-cols-3  xl:grid-cols-2 '
         )}>
             <div className="max-w-[640px] w-full md:flex hidden bg-[url('/home/contact-modal-image.jpg')] h-full bg-cover justify-center items-center ">
-                <div className={`max-w-[465px] p-2 ${constants.glassFill2} w-fit h-fit rounded-2xl`}>
-                    <div className={`pb-8 px-6 pt-6 ${constants.glassFill} ${constants.glassStroke} shadow-md w-fit h-fit rounded-2xl`}>
-
-                        <div className='flex gap-4 items-center'>
-                            <Image src='/contact-logo.jpg' width={60} height={60} alt='contact logo' />
-                            <div>
-                                <SubHeading level='h4' size='sm' colorScheme='gradient-primary'>Start vandaag met</SubHeading>
-                                <Heading level='h5' size='3xl'>Massive Online Marketing</Heading>
-                            </div>
-                        </div>
-
-                        <ul className='mt-8'>
-                            {MODAL_LEFT_SIDE.map((item) => (
-                                <li key={item} className='flex gap-2 items-center mt-2'>
-                                    <GreenCheckmarkRound />
-                                    <Paragraph>{item}</Paragraph>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-
-                </div>
-
+                <Card />
             </div>
 
             <div className='overflow-y-scroll w-full'>
@@ -221,7 +200,7 @@ export const MultiStepContactForm: React.FC<MultiStepContactForm> = ({ className
 
                 <form
                     onSubmit={handleSubmit(processForm)}
-                    className=' w-[440px] mx-auto xl:mr-0 xl:ml-[15%] p-4 '
+                    className=' max-w-[440px] mx-auto xl:mr-0 xl:ml-[15%] p-4 '
                 >
                     {/* STEP ONE */}
                     {currentStep === "step1" &&

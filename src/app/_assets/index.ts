@@ -16,6 +16,8 @@ import DienstenWebsite from './diensten-zakelijke-website-afbeelding.svg'
 import CodeScreenWeb from './code-screen-weboplossingen.svg'
 import SoftwareSircle from './website-software-intregratie.svg'
 
+import NotFoundBackground from './404-pagina-niet-gevonden.svg'
+
 
 export {
   BannerSvg,
@@ -35,4 +37,7 @@ export {
 
   CodeScreenWeb,
   SoftwareSircle,
+
+  NotFoundBackground,
+  
 }
