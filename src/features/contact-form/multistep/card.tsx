@@ -10,7 +10,7 @@ const Card = () => {
     <div className={`pb-8 px-6 pt-6 ${constants.glassFill} ${constants.glassStroke} shadow-md w-fit h-fit rounded-2xl`}>
 
       <div className='flex gap-4 items-center'>
-        <Image src='/contact-logo.jpg' width={60} height={60} alt='contact logo' />
+        <Image src='/massive-logo-hd-wit-64x64.png' width={60} height={60} alt='contact logo' className=' rounded-xl'/>
         <div>
           <SubHeading level='h4' size='sm' colorScheme='gradient-primary'>Start vandaag met</SubHeading>
           <Heading level='h5' size='3xl'>Massive Online Marketing</Heading>
