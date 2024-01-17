@@ -32,10 +32,10 @@ const Drawer = ({ isOpen, setIsOpen }: DrawerProps) => {
         </svg>
       </button>
       <ul className="p-4  flex flex-col h-full gap-6">
-        <li>Diensten</li>
+        {/* <li>Diensten</li>
         <li>Process</li>
         <li>Producten</li>
-        <li>Over ons</li>
+        <li>Over ons</li> */}
         <li>
           <ModalFullScreen size='sm' variant={'primary'} buttonText='contact' animationDuration={1000} animationIn='element' animationOut='element-out'>
             <MultiStepContactForm />
@@ -92,10 +92,10 @@ const NavbarTwo = () => {
             </button>
 
             <ul className="hidden md:flex items-center gap-6">
-              <li>Diensten</li>
+              {/* <li>Diensten</li>
               <li>Process</li>
               <li>Producten</li>
-              <li>Over ons</li>
+              <li>Over ons</li> */}
             </ul>
 
             {/* <Button size='sm' variant={'primary'} className="md:block hidden">Contact</Button> */}

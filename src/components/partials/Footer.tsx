@@ -196,8 +196,8 @@ const footerData = {
   },
 
   legal: [
-    { name: 'Privacy Policy', href: '#' },
-    { name: 'Algemene voorwaarden', href: '#' },
+    { name: 'Privacy Policy', href: '/over-ons/privacybeleid' },
+    { name: 'Cookie Policy', href: '/over-ons/cookiebeleid' },
   ],
   social: [
     {

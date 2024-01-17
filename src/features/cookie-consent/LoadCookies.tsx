@@ -30,8 +30,8 @@ function LoadCookies() {
             }
 
             //* Always load these scripts
-            // newScripts.push('/loadClarity.js');
-            // newScripts.push('/google-analytics.js');
+            newScripts.push('/clarity.js');
+            newScripts.push('/google-analytics.js');
 
             setScripts(newScripts);
             setLoaded(true);  // Mark the scripts as loaded

@@ -16,7 +16,7 @@ import { submitForm } from '@/lib/actions/submit-form';
 import { cn } from "@/lib/utils"
 
 // components
-import { Heading } from '@/components/ui/typography/typography'
+import { Heading, Paragraph, SubHeading } from '@/components/ui/typography/typography'
 import { Button } from '@/components/ui/button';
 
 // form steps
@@ -28,6 +28,9 @@ import { SEOStep } from './SEO';
 import { SEAStep } from './SEA';
 import { StrategieStep } from './Strategie';
 import { ModalContext } from '@/features/modal/FullScreenModal';
+import { GreenCheckmarkRound } from '@/assets/icons';
+import { constants } from '@/styles/styles';
+import Image from 'next/image';
 
 type Inputs = z.infer<typeof formSchema>;
 
@@ -183,15 +186,38 @@ export const MultiStepContactForm: React.FC<MultiStepContactForm> = ({ className
             'h-full w-full',
             'grid md:grid-cols-3  xl:grid-cols-2 '
         )}>
-            <div className='md:block hidden'>test</div>
+            <div className="md:flex hidden bg-[url('/home/contact-modal-image.jpg')] h-full bg-cover justify-center items-center ">
+                <div className={`p-2 ${constants.glassFill2} w-fit h-fit rounded-2xl`}>
+                    <div className={`pb-8 px-6 pt-6 ${constants.glassFill} ${constants.glassStroke} shadow-md w-fit h-fit rounded-2xl`}>
 
-            <div className='md:col-span-2 xl:col-span-1'>
+                        <div className='flex gap-4 items-center'>
+                            <Image src='/contact-logo.jpg' width={60} height={60} alt='contact logo' />
+                            <div>
+                                <SubHeading level='h4' size='sm' colorScheme='gradient-primary'>Start vandaag met</SubHeading>
+                                <Heading level='h5' size='3xl'>Massive Online Marketing</Heading>
+                            </div>
+                        </div>
+
+                        <ul className='mt-8'>
+                            {MODAL_LEFT_SIDE.map((item) => (
+                                <li key={item} className='flex gap-2 items-center mt-2'>
+                                    <GreenCheckmarkRound />
+                                    <Paragraph>{item}</Paragraph>
+                                </li>
+                            ))}
+                        </ul>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div className='md:col-span-2 xl:col-span-1 overflow-y-scroll'>
                 <div className='flex gap-6 mb-auto p-4'>
                     <Button variant='outline' className=' md:ml-auto mr-16' onClick={skipToContactDetails}><EnvelopeIcon className='h-5 w-5' />Direct contact</Button>
                     {/* {children} */}
                 </div>
-
-
 
                 <form
                     onSubmit={handleSubmit(processForm)}
@@ -323,4 +349,13 @@ const DIENSTEN_OPTIES = [
     { option: 'Advertentie beheer' },
     { option: 'Online strategie ontwikkeling' },
     { option: 'Geen van de bovenstaande' }
+]
+
+
+const MODAL_LEFT_SIDE = [
+    'Gratis Consultancy',
+    "Op Maat Gemaakt Advies",
+    "Ontdek uw Digitaal Potentieel",
+    "Langdurige Partnerschappen",
+    "All-in-One Online Marketing Bureau"
 ]
