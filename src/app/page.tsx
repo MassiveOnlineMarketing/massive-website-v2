@@ -47,15 +47,14 @@ export default function Home() {
           <Banner />
         </div>
       </div>
-      <div className="h-[300px] border-b border-rose-400">
-
-      </div>
+      
+      <div className="h-20 mlg:h-[300px] "></div>
 
       <Weboplossingen />
 
       <Intergratie />
 
-      <SectionOne />
+      {/* <SectionOne /> */}
 
       <div className="relative">
         <Diensten />

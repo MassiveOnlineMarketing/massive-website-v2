@@ -14,6 +14,7 @@ import DiensetenWebshop from './diensten-webshop-afbeelding.svg'
 import DienstenWebsite from './diensten-zakelijke-website-afbeelding.svg'
 
 import CodeScreenWeb from './code-screen-weboplossingen.svg'
+import SoftwareSircle from './website-software-intregratie.svg'
 
 
 export {
@@ -33,4 +34,5 @@ export {
   DienstenWebsite,
 
   CodeScreenWeb,
+  SoftwareSircle,
 }

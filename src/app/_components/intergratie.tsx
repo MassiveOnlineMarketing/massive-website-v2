@@ -1,11 +1,14 @@
 import Title from '@/components/ui/typography/title'
 import { SubHeading, Heading, Paragraph } from '@/components/ui/typography/typography'
 import React from 'react'
+import { SoftwareSircle } from '../_assets'
 
 const Intergratie = () => {
   return (
-    <div>
-      <Title className='max-w-[362px] text-center flex items-center'>
+    <div className='relative flex items-center justify-center'>
+      <SoftwareSircle className=' max-w-[915px] -z-10' />
+
+      <Title className=' absolute max-w-[362px] text-center flex items-center'>
         <SubHeading level='h2' size='sm' variant='pill' colorScheme='glass'>{INTERGRATIE.subHeading}</SubHeading>
         <Heading level='h3' size='4xl'>{INTERGRATIE.heading}</Heading>
         <Paragraph>{INTERGRATIE.paragraph}</Paragraph>

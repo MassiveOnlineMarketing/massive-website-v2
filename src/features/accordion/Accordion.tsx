@@ -64,7 +64,10 @@ const AccordionContent: React.FC<AccordionContentProps> = ({ children }) => {
             // `px-${tailwindPadding}  `,
             `${expand ? `pb-4` : ''}`)}
         >   
-            {expand ? <div className="absolute -z-20 top-0 -left-5 h-full w-8 rounded-[14px] blur-md bg-gradient-to-t from-[#FFCFA3]/25 from-5.48% via-[#C176FC]/25 via-24.47% via-[#9076FC]/25 via-54.38% to-[#C6B8FF]/25 to-90.5%">test</div> : ''}
+            <div className={`absolute -z-20 top-0 -left-5 h-full w-8 rounded-[14px] blur-md bg-gradient-to-t from-[#FFCFA3]/25 from-5.48% via-[#C176FC]/25 via-24.47% via-[#9076FC]/25 via-54.38% to-[#9076FC]/10 to-90.5% transition-opacity duration-500 ease-out op ${expand ? ' opacity-100' : 'opacity-0'}`}>
+
+            </div>
+            {/* {expand ? <div className="  opacity-100"></div> : <div className="absolute -z-20 top-0 -left-5 h-full w-8 rounded-[14px] blur-md bg-gradient-to-t from-[#FFCFA3]/25 from-5.48% via-[#C176FC]/25 via-24.47% via-[#9076FC]/25 via-54.38% to-[#9076FC]/10 to-90.5% opacity-0"></div>} */}
             {children}
         </div>
     );
