@@ -28,7 +28,7 @@ export const Banner = () => {
 
 
 const BANNER = {
-  heading: "Ontketen het Digitaal Potentieel van Uw Onderneming",
-  paragraaf: "Plan een kosteloos strategisch gesprek in met onze experts en ontdek de concrete stappen om jouw online aanwezigheid te versterken.",
+  heading: "Realiseer Uw Digitale Ambities",
+  paragraaf: "Laat ons uw digitale potentieel ontketenen met strategieën die resultaten leveren. Benieuwd naar de mogelijkheden, plan een kosteloos gesprek met een van onze experts.",
   buttonLabel: "Ontdek onze Diensten"
 }

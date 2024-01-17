@@ -99,7 +99,7 @@ const DIENSTEN = {
       icon: <ComputerDesktopIcon className='w-5 h-5' />,
       subHeading: 'Zakelijke Website',
       heading: 'Website Ontwikkeling',
-      paragraph: 'Maak indruk met onze op maat gemaakte websites. Van responsieve ontwerpen tot geavanceerde functionaliteiten, wij bouwen websites die niet alleen mooi zijn, maar ook presteren.',
+      paragraph: 'Converteren uw bezoekers niet? Wij creëren gebruikersvriendelijke webshops geoptimaliseerd voor conversie, die de verkoop stimuleren en klantloyaliteit opbouwen.',
       buttonLabel: 'Neem Contact op',
     },
     {
@@ -117,7 +117,7 @@ const DIENSTEN = {
       icon: <MagnifyingGlassIcon className='w-5 h-5' />,
       subHeading: 'SEO',
       heading: 'Zoekmachineoptimalisatie',
-      paragraph: 'Verhoog uw online zichtbaarheid met onze strategische SEO-diensten. Wij optimaliseren uw website voor hogere rankings en meer organisch verkeer.',
+      paragraph: 'Behaalt u elke keer maar niet de positie in google die u wilt? Verhoog uw online zichtbaarheid met onze strategische SEO-diensten. Waar wij uw website optimaliseren en u van een hogere positie geniet.',
       buttonLabel: 'Neem Contact op',
     },
     {
@@ -135,7 +135,7 @@ const DIENSTEN = {
       icon: <ComputerDesktopIcon className='w-5 h-5' />,
       subHeading: 'CMS',
       heading: 'Content Management Systemen',
-      paragraph: 'Neem de controle over uw content met onze krachtige CMS-oplossingen. Wij zorgen voor gebruiksvriendelijke systemen die u volledige controle geven over uw websitecontent',
+      paragraph: 'Het overzicht kwijt door alle verschillende systemen die uw website draaiende houden?  Neem de controle over uw website weer terug door onze opmaat gemaakte CMS-oplossingen. ',
       buttonLabel: 'Neem Contact op',
     },
     {
@@ -144,7 +144,7 @@ const DIENSTEN = {
       icon: <AcademicCapIcon className='w-5 h-5' />,
       subHeading: 'Webshop',
       heading: 'Digitale Strategieontwikkeling',
-      paragraph: '"Laat uw bedrijf groeien met onze doordachte digitale strategieën. Wij helpen u bij het bepalen van doelen, het identificeren van kansen en het implementeren van effectieve digitale plannen.',
+      paragraph: 'Geen idee hoe je uw online strategie moet aanpakken? Wij helpen u bij het bepalen van doelen, het identificeren van kansen en het implementeren van effectieve digitale plannen.',
       buttonLabel: 'Neem Contact op',
     }
 

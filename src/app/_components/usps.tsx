@@ -31,28 +31,28 @@ export const Usps = () => {
 const USPS = {
   title: {
     subHeading: "Waarom Ondernemers voor Ons Kiezen",
-    heading: "Zet uw zakelijke visie om in tastbare sucessen met strategieën die ondernemerschap en resultaatgerichtheid combineren"
+    heading: "Wij combineren ondernemerschap met resultaatgerichte strategieën om uw bedrijf naar een hoger niveau te tillen."
   },
   cards: [
     {
       icon: <UspsOneSvg />,
       heading: "Open en Transparant",
-      paragraph: "Wat u ziet, is wat u krijgt. Onze transparantie in elke stap is de sleutel tot succesvolle samenwerkingen.",
+      paragraph: "Frustraties over gebrek aan duidelijkheid? Bij ons vindt u volledige transparantie en heldere communicatie, essentieel voor een vertrouwensrelatie en vruchtbare samenwerking.",
     },
     {
       icon: <UspsOneSvg />,
       heading: "Creatieve Oplossingen",
-      paragraph: "Wij breken de conventies om innovatieve, op maat gemaakte oplossingen te leveren die uw merk laten opvallen.",
+      paragraph: "Teleurgesteld door standaardoplossingen? Wij brengen innovatie en maatwerk, waardoor uw merk opvalt en een onuitwisbare indruk achterlaat.",
     },
     {
       icon: <UspsOneSvg />,
-      heading: "Toewijding aan Ondernemrssucces",
-      paragraph: "Als ondernemers begrijpen we uw uitdagingen. Uw groei is ons primair doel.",
+      heading: "Gericht op uw Succes",
+      paragraph: "Heeft u te maken gehad met bureaus die uw doelen niet begrepen? Als mede-ondernemers staan wij in uw schoenen en zijn toegewijd aan uw groei en succes.",
     },
     {
       icon: <UspsOneSvg />,
       heading: "Diversiteit en Inclusiviteit",
-      paragraph: "Diversiteit in ons team verrijkt onze creativiteit en strategische benaderingen, waardoor we alle perspectieven kunnen omarmen.",
+      paragraph: "Vastgelopen in een tunnelvisie bij andere bureaus? Ons diverse team brengt nieuwe perspectieven en creatieve oplossingen die uw bedrijf vanuit alle hoeken benaderen.",
     },
   ]
 }
