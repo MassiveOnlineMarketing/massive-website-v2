@@ -33,6 +33,7 @@ const ModalFullScreen: React.FC<ModalProps> = ({children, buttonText, className,
     animationIn,
     animationOut
   });
+  
 
   return (
     <ModalContext.Provider value={{ setIsVisible }}>
@@ -40,7 +41,7 @@ const ModalFullScreen: React.FC<ModalProps> = ({children, buttonText, className,
 
       {shouldRender && (
         // navbar height aan top toevoegen
-        <div className={`fixed h-lvh top-0 left-0 right-0 bottom-0 z-50  bg-white p-4 overflow-y-auto ${animationClass}`}>
+        <div className={`fixed h-lvh top-0 left-0 right-0 bottom-0 z-50  bg-white overflow-y-auto ${animationClass}`}>
           <Button option='icon' variant='secondary' onClick={() => setIsVisible(false)} className='fixed ml-auto top-4 right-4'>
             <XMarkIcon className='h-4 w-4' />
           </Button>

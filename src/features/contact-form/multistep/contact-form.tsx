@@ -22,7 +22,7 @@ import { Button } from '@/components/ui/button';
 // form steps
 import { WebDesignStep } from './WebDesign';
 import { ContactStep } from './Contact';
-import { TestInput} from '@/components/ui/input/fields';
+import { TestInput } from '@/components/ui/input/fields';
 import { EcommerceStep } from './Ecommerce';
 import { SEOStep } from './SEO';
 import { SEAStep } from './SEA';
@@ -73,8 +73,8 @@ export const MultiStepContactForm: React.FC<MultiStepContactForm> = ({ className
     // store the website url 
     const websiteURL = watch('websiteURL');
 
-    
-    
+
+
     // Handling the next step
     const [currentStep, setCurrentStep] = useState("step1");
     const [stepHistory, setStepHistory] = useState<string[]>([]);
@@ -163,13 +163,13 @@ export const MultiStepContactForm: React.FC<MultiStepContactForm> = ({ className
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify(data)
-            });  
-            
+            });
+
             reset();
             setIsVisible(false);
 
         } catch (error) {
-            
+
         }
 
         setData(data);
@@ -180,128 +180,135 @@ export const MultiStepContactForm: React.FC<MultiStepContactForm> = ({ className
     return (
         <div className={cn(
             className,
-            'h-full w-full'
+            'h-full w-full',
+            'grid md:grid-cols-3  xl:grid-cols-2 '
         )}>
-            <div className='flex gap-6 mb-auto'>
-                <Button variant='outline' className=' md:ml-auto mr-16' onClick={skipToContactDetails}><EnvelopeIcon className='h-5 w-5' />Direct contact</Button>
-                {/* {children} */}
+            <div className='md:block hidden'>test</div>
+
+            <div className='md:col-span-2 xl:col-span-1'>
+                <div className='flex gap-6 mb-auto p-4'>
+                    <Button variant='outline' className=' md:ml-auto mr-16' onClick={skipToContactDetails}><EnvelopeIcon className='h-5 w-5' />Direct contact</Button>
+                    {/* {children} */}
+                </div>
+
+
+
+                <form
+                    onSubmit={handleSubmit(processForm)}
+                    className=' max-w-[440px] mx-auto lg:mr-0 lg:ml-[15%] p-4 '
+                >
+                    {/* STEP ONE */}
+                    {currentStep === "step1" &&
+                        <>
+                            <p className='font-semibold text-[#4B5563]'>1/3</p>
+                            <Heading level='h3' size='xl' colorScheme='accent' className='mb-8'>In welke Dienst bent u geïnteresseerd?</Heading>
+                            {/* <RadioGroup data={DIENSTEN_OPTIES} register={register} registerType="dienst" /> */}
+                            <div className='flex flex-col gap-3'>
+                                {DIENSTEN_OPTIES.map((option, index) => (
+                                    <TestInput
+                                        key={index}
+                                        type='radio'
+                                        label={option.option}
+                                        value={option.option}
+                                        {...register('dienst')}
+                                    />
+                                ))}
+                            </div>
+                            <Button type='button' size='lg' variant='primary' className='w-full mt-12' onClick={nextStep}>Volgende</Button>
+                        </>
+                    }
+
+                    {/* web dev */}
+                    {currentStep === "Web Design & Development" &&
+                        <>
+                            <p className='font-semibold text-[#4B5563]'>2/3</p>
+                            <Heading level='h3' size='xl' colorScheme='accent' className='mb-8'>Web Design & Development</Heading>
+                            <WebDesignStep register={register} watch={watch} errors={errors} />
+                            <div className='inline-flex gap-6 mt-12 w-full'>
+                                <Button type='button' variant='outline' className="px-12 py-3" onClick={prevStep}>Terug</Button>
+                                <Button type='button' variant='primary' className="w-full py-3" onClick={nextStep}>Volgende</Button>
+                            </div>
+                        </>
+                    }
+
+
+                    {/* ECOMM STEP TWO */}
+                    {currentStep === "eCommerce en Webwinkel oplossingen" &&
+                        <>
+                            <p className='font-semibold text-[#4B5563]'>2/3</p>
+                            <Heading level='h3' size='xl' colorScheme='accent' className='mb-8'>Webwinkel</Heading>
+                            <EcommerceStep register={register} watch={watch} errors={errors} />
+                            <div className='inline-flex gap-6 mt-12 w-full'>
+                                <Button type='button' variant='outline' className="px-12 py-3" onClick={prevStep}>Terug</Button>
+                                <Button type='button' variant='primary' className="w-full py-3" onClick={nextStep}>Volgende</Button>
+                            </div>
+                        </>
+                    }
+
+
+                    {/* SEO STEP TWO */}
+                    {currentStep === "SEO (Zoekmachineoptimalizatie)" &&
+                        <>
+                            <p className='font-semibold text-[#4B5563]'>2/3</p>
+                            <Heading level='h3' size='xl' colorScheme='accent' className='mb-8'>Zoekmachine optimalizatie</Heading>
+                            <SEOStep register={register} watch={watch} errors={errors} />
+                            <div className='inline-flex gap-6 mt-12 w-full'>
+                                <Button type='button' variant='outline' className="px-12 py-3" onClick={prevStep}>Terug</Button>
+                                <Button type='button' variant='primary' className="w-full py-3" onClick={nextStep}>Volgende</Button>
+                            </div>
+                        </>
+                    }
+
+
+                    {/* SEA STEP TWO */}
+                    {currentStep === "Advertentie beheer" &&
+                        <>
+                            <p className='font-semibold text-[#4B5563]'>2/3</p>
+                            <Heading level='h3' size='xl' colorScheme='accent' className='mb-8'>Advertentiebeheer</Heading>
+                            <SEAStep register={register} watch={watch} errors={errors} />
+                            <div className='inline-flex gap-6 mt-12 w-full'>
+                                <Button type='button' variant='outline' className="px-12 py-3" onClick={prevStep}>Terug</Button>
+                                <Button type='button' variant='primary' className="w-full py-3" onClick={nextStep}>Volgende</Button>
+                            </div>
+                        </>
+                    }
+
+
+                    {/* STRATEGY STEP TWO */}
+                    {currentStep === "Online strategie ontwikkeling" &&
+                        <>
+                            <p className='font-semibold text-[#4B5563]'>2/3</p>
+                            <Heading level='h3' size='xl' colorScheme='accent' className='mb-8'>Online strategie ontwikkeling</Heading>
+                            <StrategieStep register={register} watch={watch} errors={errors} />
+                            <div className='inline-flex gap-6 mt-12 w-full'>
+                                <Button type='button' variant='outline' className="px-12 py-3" onClick={prevStep}>Terug</Button>
+                                <Button type='button' variant='primary' className="w-full py-3" onClick={nextStep}>Volgende</Button>
+                            </div>
+                        </>
+                    }
+
+
+                    {/* STEP THREE */}
+                    {currentStep === "contactDetails" &&
+                        <>
+                            <p className='font-semibold text-[#4B5563]'>3/3</p>
+                            <Heading level='h3' size='xl' colorScheme='accent' className='mb-8'>Contact Gegevens</Heading>
+                            <ContactStep register={register} watch={watch} errors={errors} websiteURL={websiteURL || ''} />
+                            <div className='inline-flex gap-6 mt-12 w-full'>
+                                <Button type='button' variant='outline' className="px-12 py-3" onClick={prevStep}>Terug</Button>
+                                <Button type='submit' variant='primary' className="w-full py-3" disabled={isSubmitting} >Versturen</Button>
+                            </div>
+                        </>
+                    }
+
+                </form>
             </div>
 
-            <form
-                onSubmit={handleSubmit(processForm)}
-                className=' max-w-[440px] mx-auto lg:mr-0 lg:ml-[15%]'
-            >
-                {/* STEP ONE */}
-                {currentStep === "step1" &&
-                    <>
-                        <p className='font-semibold text-[#4B5563]'>1/3</p>
-                        <Heading level='h3' size='xl' colorScheme='accent' className='mb-8'>In welke Dienst bent u geïnteresseerd?</Heading>
-                        {/* <RadioGroup data={DIENSTEN_OPTIES} register={register} registerType="dienst" /> */}
-                        <div className='flex flex-col gap-3'>
-                            {DIENSTEN_OPTIES.map((option, index) => (
-                                <TestInput
-                                    key={index} 
-                                    type='radio'
-                                    label={option.option}
-                                    value={option.option}
-                                    {...register('dienst')}
-                                />
-                            ))}
-                        </div>
-                        <Button type='button' size='lg' variant='primary' className='w-full mt-12' onClick={nextStep}>Volgende</Button>
-                    </>
-                }
-
-                {/* web dev */}
-                {currentStep === "Web Design & Development" &&
-                <>  
-                    <p className='font-semibold text-[#4B5563]'>2/3</p>
-                    <Heading level='h3' size='xl' colorScheme='accent' className='mb-8'>Web Design & Development</Heading>
-                    <WebDesignStep register={register} watch={watch} errors={errors} />
-                    <div className='inline-flex gap-6 mt-12 w-full'>
-                        <Button type='button' variant='outline' className="px-12 py-3" onClick={prevStep}>Terug</Button>
-                        <Button type='button' variant='primary' className="w-full py-3" onClick={nextStep}>Volgende</Button>
-                    </div>
-                </>
-                }
-
-
-                {/* ECOMM STEP TWO */}
-                {currentStep === "eCommerce en Webwinkel oplossingen" &&
-                <>
-                    <p className='font-semibold text-[#4B5563]'>2/3</p>
-                    <Heading level='h3' size='xl' colorScheme='accent' className='mb-8'>Webwinkel</Heading>
-                    <EcommerceStep register={register} watch={watch} errors={errors} />
-                    <div className='inline-flex gap-6 mt-12 w-full'>
-                        <Button type='button' variant='outline' className="px-12 py-3" onClick={prevStep}>Terug</Button>
-                        <Button type='button' variant='primary' className="w-full py-3" onClick={nextStep}>Volgende</Button>
-                    </div>
-                </>
-                }
-
-
-                {/* SEO STEP TWO */}
-                {currentStep === "SEO (Zoekmachineoptimalizatie)" &&
-                <>
-                    <p className='font-semibold text-[#4B5563]'>2/3</p>
-                    <Heading level='h3' size='xl' colorScheme='accent' className='mb-8'>Zoekmachine optimalizatie</Heading>
-                    <SEOStep register={register} watch={watch} errors={errors} />
-                    <div className='inline-flex gap-6 mt-12 w-full'>
-                        <Button type='button' variant='outline' className="px-12 py-3" onClick={prevStep}>Terug</Button>
-                        <Button type='button' variant='primary' className="w-full py-3" onClick={nextStep}>Volgende</Button>
-                    </div>
-                </>
-                }
-
-
-                {/* SEA STEP TWO */}
-                {currentStep === "Advertentie beheer" &&
-                <>
-                    <p className='font-semibold text-[#4B5563]'>2/3</p>
-                    <Heading level='h3' size='xl' colorScheme='accent' className='mb-8'>Advertentiebeheer</Heading>
-                    <SEAStep register={register} watch={watch} errors={errors} />
-                    <div className='inline-flex gap-6 mt-12 w-full'>
-                        <Button type='button' variant='outline' className="px-12 py-3" onClick={prevStep}>Terug</Button>
-                        <Button type='button' variant='primary' className="w-full py-3" onClick={nextStep}>Volgende</Button>
-                    </div>
-                </>
-                }
-
-
-                {/* STRATEGY STEP TWO */}
-                {currentStep === "Online strategie ontwikkeling" &&
-                <>
-                    <p className='font-semibold text-[#4B5563]'>2/3</p>
-                    <Heading level='h3' size='xl' colorScheme='accent' className='mb-8'>Online strategie ontwikkeling</Heading>
-                    <StrategieStep register={register} watch={watch} errors={errors} />
-                    <div className='inline-flex gap-6 mt-12 w-full'>
-                        <Button type='button' variant='outline' className="px-12 py-3" onClick={prevStep}>Terug</Button>
-                        <Button type='button' variant='primary' className="w-full py-3" onClick={nextStep}>Volgende</Button>
-                    </div>
-                </>
-                }
-
-
-                {/* STEP THREE */}
-                {currentStep === "contactDetails" &&
-                    <>
-                        <p className='font-semibold text-[#4B5563]'>3/3</p>
-                        <Heading level='h3' size='xl' colorScheme='accent' className='mb-8'>Contact Gegevens</Heading>
-                        <ContactStep register={register} watch={watch} errors={errors} websiteURL={websiteURL || ''}/>
-                        <div className='inline-flex gap-6 mt-12 w-full'>
-                            <Button type='button' variant='outline' className="px-12 py-3" onClick={prevStep}>Terug</Button>
-                            <Button type='submit' variant='primary' className="w-full py-3" disabled={isSubmitting} >Versturen</Button>
-                        </div>
-                    </>
-                }
-
-            </form>
-
-            <div className=''>
+            {/* <div className=''>
                 <pre>
                     {data && JSON.stringify(data, null, 2)}
                 </pre>
-            </div>
+            </div> */}
 
         </div>
     )
@@ -310,10 +317,10 @@ export const MultiStepContactForm: React.FC<MultiStepContactForm> = ({ className
 
 
 const DIENSTEN_OPTIES = [
-    { option: 'Web Design & Development' }, 
-    { option: 'eCommerce en Webwinkel oplossingen' }, 
-    { option: 'SEO (Zoekmachineoptimalizatie)' }, 
-    { option: 'Advertentie beheer' }, 
-    { option: 'Online strategie ontwikkeling' }, 
+    { option: 'Web Design & Development' },
+    { option: 'eCommerce en Webwinkel oplossingen' },
+    { option: 'SEO (Zoekmachineoptimalizatie)' },
+    { option: 'Advertentie beheer' },
+    { option: 'Online strategie ontwikkeling' },
     { option: 'Geen van de bovenstaande' }
 ]

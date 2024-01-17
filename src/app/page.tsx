@@ -16,6 +16,8 @@ import WaarWijVoorStaan from "./_components/waar-wij-voor-staan";
 import Faq from "./_components/faq";
 import container from "@/styles/styles";
 import { MeshGradientHero } from "./_assets";
+import Weboplossingen from "./_components/weboplossingen";
+import Intergratie from "./_components/intergratie";
 
 
 
@@ -45,6 +47,13 @@ export default function Home() {
           <Banner />
         </div>
       </div>
+      <div className="h-[300px] border-b border-rose-400">
+
+      </div>
+
+      <Weboplossingen />
+
+      <Intergratie />
 
       <SectionOne />
 
