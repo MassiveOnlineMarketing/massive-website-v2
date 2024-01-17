@@ -11,6 +11,7 @@ import { Button } from '../ui/button';
 
 import ModalFullScreen from "@/features/modal/FullScreenModal";
 import { MultiStepContactForm } from "@/features/contact-form/multistep/contact-form";
+import Link from 'next/link';
 
 interface DrawerProps {
   isOpen: boolean;
@@ -32,10 +33,10 @@ const Drawer = ({ isOpen, setIsOpen }: DrawerProps) => {
         </svg>
       </button>
       <ul className="p-4  flex flex-col h-full gap-6">
-        <li>Diensten</li>
+        {/* <li>Diensten</li>
         <li>Process</li>
         <li>Producten</li>
-        <li>Over ons</li>
+        <li>Over ons</li> */}
         <li>
           <ModalFullScreen size='sm' variant={'primary'} buttonText='contact' animationDuration={1000} animationIn='element' animationOut='element-out'>
             <MultiStepContactForm />
@@ -79,10 +80,12 @@ const NavbarTwo = () => {
 
   return (
     <nav>
-      <div className={`fixed top-0 w-full z-50 ${constants.glassFill} border-b-[1px] border-white shadow-sm  transition-transform duration-300 ease-in-out ${navbarStyle}`}>
+      <div className={`fixed top-0 w-full z-40 ${constants.glassFill} border-b-[1px] border-white shadow-sm  transition-transform duration-300 ease-in-out ${navbarStyle}`}>
         <div className='px-8 py-3  max-w-[1300px] mx-auto '>
           <div className=' justify-between flex flex-row '>
-            <MassiveLogoColor className="w-14" />
+            <Link href='/'>
+              <MassiveLogoColor className="w-14" />
+            </Link>
 
             {/* hamburger */}
             <button onClick={() => setIsOpen(!isOpen)} className="md:hidden">
@@ -92,10 +95,10 @@ const NavbarTwo = () => {
             </button>
 
             <ul className="hidden md:flex items-center gap-6">
-              <li>Diensten</li>
+              {/* <li>Diensten</li>
               <li>Process</li>
               <li>Producten</li>
-              <li>Over ons</li>
+              <li>Over ons</li> */}
             </ul>
 
             {/* <Button size='sm' variant={'primary'} className="md:block hidden">Contact</Button> */}

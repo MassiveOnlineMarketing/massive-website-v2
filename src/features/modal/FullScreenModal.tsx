@@ -45,7 +45,7 @@ const ModalFullScreen: React.FC<ModalProps> = ({children, buttonText, className,
           <Button option='icon' variant='secondary' onClick={() => setIsVisible(false)} className='fixed ml-auto top-4 right-4'>
             <XMarkIcon className='h-4 w-4' />
           </Button>
-          <div className={` flex overflow-y-auto items-center pb-[100px] md:pb-0`}>
+          <div className={` flex overflow-y-auto items-center pb-[100px] md:pb-0 h-full`}>
               {children}
           </div>
         </div>

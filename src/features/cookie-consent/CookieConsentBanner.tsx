@@ -92,7 +92,7 @@ function CookieConsentBanner() {
         <div id='cookieConcent-Buttons' className='flex gap-6 pt-4 md:pt-0'>
           <button className={` h-fit self-center`} onClick={acceptAllCookies}>Accepteren</button>
           <button className={` border-b h-fit self-center hover:border-black`} onClick={acceptAllCookies}>Alleen noodzakelijke</button>
-          <button onClick={() => setShowSettings(!showSettings)}>Instellingen</button>
+          {/* <button onClick={() => setShowSettings(!showSettings)}>Instellingen</button> */}
         </div>
       </div>
       {showSettings && (

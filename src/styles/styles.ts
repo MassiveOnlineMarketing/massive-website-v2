@@ -3,7 +3,9 @@ export const constants = {
   glassFill: " backdrop-blur-[7px] bg-gradient-to-b from-[#fff]/60 to-[#fff]/50",
 
   darkStroke: "dark-glass-border-gradient relative",
-  darkFill: "backdrop-blur-[7px] bg-gradient-to-b from-[#1F29371A]/60 to-[#1F29371A]/50"
+  darkFill: "backdrop-blur-[7px] bg-gradient-to-b from-[#1F29371A]/60 to-[#1F29371A]/50",
+
+  glassFill2: "bg-gradient-to-b from-[#fff]/60 to-[#fff]/50",
 }
 
 const container = {
