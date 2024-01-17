@@ -11,6 +11,7 @@ import { Button } from '../ui/button';
 
 import ModalFullScreen from "@/features/modal/FullScreenModal";
 import { MultiStepContactForm } from "@/features/contact-form/multistep/contact-form";
+import Link from 'next/link';
 
 interface DrawerProps {
   isOpen: boolean;
@@ -79,10 +80,12 @@ const NavbarTwo = () => {
 
   return (
     <nav>
-      <div className={`fixed top-0 w-full z-50 ${constants.glassFill} border-b-[1px] border-white shadow-sm  transition-transform duration-300 ease-in-out ${navbarStyle}`}>
+      <div className={`fixed top-0 w-full z-40 ${constants.glassFill} border-b-[1px] border-white shadow-sm  transition-transform duration-300 ease-in-out ${navbarStyle}`}>
         <div className='px-8 py-3  max-w-[1300px] mx-auto '>
           <div className=' justify-between flex flex-row '>
-            <MassiveLogoColor className="w-14" />
+            <Link href='/'>
+              <MassiveLogoColor className="w-14" />
+            </Link>
 
             {/* hamburger */}
             <button onClick={() => setIsOpen(!isOpen)} className="md:hidden">

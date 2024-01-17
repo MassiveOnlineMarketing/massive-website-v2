@@ -184,10 +184,11 @@ export const MultiStepContactForm: React.FC<MultiStepContactForm> = ({ className
         <div className={cn(
             className,
             'h-full w-full',
-            'grid md:grid-cols-3  xl:grid-cols-2 '
+            'flex '
+            // 'grid md:grid-cols-3  xl:grid-cols-2 '
         )}>
-            <div className="md:flex hidden bg-[url('/home/contact-modal-image.jpg')] h-full bg-cover justify-center items-center ">
-                <div className={`p-2 ${constants.glassFill2} w-fit h-fit rounded-2xl`}>
+            <div className="max-w-[640px] w-full md:flex hidden bg-[url('/home/contact-modal-image.jpg')] h-full bg-cover justify-center items-center ">
+                <div className={`max-w-[465px] p-2 ${constants.glassFill2} w-fit h-fit rounded-2xl`}>
                     <div className={`pb-8 px-6 pt-6 ${constants.glassFill} ${constants.glassStroke} shadow-md w-fit h-fit rounded-2xl`}>
 
                         <div className='flex gap-4 items-center'>
@@ -206,14 +207,13 @@ export const MultiStepContactForm: React.FC<MultiStepContactForm> = ({ className
                                 </li>
                             ))}
                         </ul>
-
                     </div>
 
                 </div>
 
             </div>
 
-            <div className='md:col-span-2 xl:col-span-1 overflow-y-scroll'>
+            <div className='overflow-y-scroll w-full'>
                 <div className='flex gap-6 mb-auto p-4'>
                     <Button variant='outline' className=' md:ml-auto mr-16' onClick={skipToContactDetails}><EnvelopeIcon className='h-5 w-5' />Direct contact</Button>
                     {/* {children} */}
@@ -221,7 +221,7 @@ export const MultiStepContactForm: React.FC<MultiStepContactForm> = ({ className
 
                 <form
                     onSubmit={handleSubmit(processForm)}
-                    className=' max-w-[440px] mx-auto lg:mr-0 lg:ml-[15%] p-4 '
+                    className=' w-[440px] mx-auto xl:mr-0 xl:ml-[15%] p-4 '
                 >
                     {/* STEP ONE */}
                     {currentStep === "step1" &&
