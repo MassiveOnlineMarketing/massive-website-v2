@@ -6,15 +6,15 @@
 /* Primary */
 .primary-button{
   background: 
-  radial-gradient(84.31% 84.31% at 50% 73.53%, rgba(255, 255, 255, 0.00) 76.66%, rgba(255, 255, 255, 0.15) 100%), linear-gradient(221deg, rgba(251, 201, 212, 0.50) -18.22%, rgba(251, 201, 212, 0.00) 34.14%), linear-gradient(180deg, #8D72FF 0%, #7857FF 57%);
+  radial-gradient(84.31% 84.31% at 50% 73.53%, rgba(255, 255, 255, 0.00) 76.66%, rgba(255, 255, 255, 0.15) 100%), linear-gradient(221deg, rgba(251, 201, 212, 0.40) -18.22%, rgba(251, 201, 212, 0.00) 34.14%), linear-gradient(180deg, #8D72FF 0%, #7857FF 57%);
     
     /* linear-gradient(180deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.1) 100%) border-box, */
 }
 .primary-button:hover{
-  background: linear-gradient(180deg, #8568FF 0%, #7758F6 100%);
+  background: radial-gradient(84.31% 84.31% at 50% 73.53%, rgba(255, 255, 255, 0.00) 76.66%, rgba(255, 255, 255, 0.15) 100%), linear-gradient(221deg, rgba(251, 201, 212, 0.50) -18.22%, rgba(251, 201, 212, 0.00) 34.14%), linear-gradient(180deg, #967ffd 0%, #8061ff 57%);
 }
 .primary-button:before{
-  background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(236, 181, 255, 0.85) 50%, rgba(236, 181, 255, 0.2) 100%);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(236, 181, 255, 0.75) 50%, rgba(236, 181, 255, 0.2) 100%);
   opacity: 0.3;
   padding: 1px;
   
@@ -54,7 +54,7 @@
 /* * Heading */
 /* Sub heading - glass dark */
 .dark-glass-border-gradient:before {
-  background-image: linear-gradient(to top, rgba(31, 41, 55, 100), rgba(31, 41, 55, 0));
+  background-image: linear-gradient(to top, rgb(255 255 255 / 7%), rgb(255 255 255 / 12%));
   padding: 1px;
   
 

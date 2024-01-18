@@ -10,7 +10,7 @@ import { InternalAnchor } from '@/components/ui/link'
 export const Banner = () => {
   return (
     <div className={`relative ${container.maxWidth}`}>
-      <div className={`relative overflow-hidden  ${constants.glassFill} shadow-custom-lg rounded-[20px] flex flex-row  `}>
+      <div className={`relative overflow-hidden  ${constants.glassFill} shadow-custom-lg rounded-[20px] flex flex-row`}>
         <div className='absolute bg-gradient-to-l from-[#FFCFA3] from--4.42% via-[#C176FC] via-14.47% via-[#9076FC] via-54.38% to-[#C6B8FF] to-85.5% h-2 top-0 w-full'></div>
         
         <div className=' p-6 md:pt-12 md:pl-8 md:pb-8 max-w-[650px]'>

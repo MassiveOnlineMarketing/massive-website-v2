@@ -82,15 +82,15 @@ function CookieConsentBanner() {
 
   // else
   return (
-    <div className='p-6 m-2 fixed bg-white shadow-sm w-full bottom-2 z-50 rounded-md'
-    style={{ maxWidth: 'calc(100% - 1rem)' }}
+    <div className='p-8 m-2 fixed border-primary border-l-4 bg-white shadow-sm bottom-2 z-50 rounded-md w-full max-w-[1300px] left-[49.6%] -translate-x-1/2'
+    // style={{ maxWidth: 'calc(100% - 1rem)' }}
     id='cookieConsent-banner'>
-      <h4>Cookie Voorkeur</h4>
-      <div className='flex flex-col md:flex-row justify-between w-full'>
-        <p className='max-w-[1100px] mr-auto'>Bij Massive maken we gebruik van cookies om de goede werking en beveiliging van onze websites mogelijk te maken en je de best mogelijke gebruikerservaring te bieden. Door op &apos; Accepteren &apos; te klikken, stem je in met het gebruik van deze cookies voor advertenties en analyses.</p>
+      <h4 className="font-semibold text-xl text-gray-800">Cookie Voorkeur</h4>
+      <div className='flex flex-col md:flex-row justify-between w-full bottom-2'>
+        <p className='max-w-[800px] mr-auto'>Bij Massive maken we gebruik van cookies om de goede werking en beveiliging van onze websites mogelijk te maken en je de best mogelijke gebruikerservaring te bieden. Door op &apos; Accepteren &apos; te klikken, stem je in met het gebruik van deze cookies voor advertenties en analyses.</p>
         {/* <p>Je kunt je cookie-instellingen op elk moment wijzigen. Lees ons Cookiebeleid voor meer informatie.</p> */}
         <div id='cookieConcent-Buttons' className='flex gap-6 pt-4 md:pt-0'>
-          <button className={` h-fit self-center`} onClick={acceptAllCookies}>Accepteren</button>
+          <button className={` h-fit self-center px-[24px] py-[12px] rounded-md bg-primary hover:bg-violet-600 text-white`} onClick={acceptAllCookies}>Accepteren</button>
           <button className={` border-b h-fit self-center hover:border-black`} onClick={acceptAllCookies}>Alleen noodzakelijke</button>
           {/* <button onClick={() => setShowSettings(!showSettings)}>Instellingen</button> */}
         </div>

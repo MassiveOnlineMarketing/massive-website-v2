@@ -16,16 +16,16 @@ const buttonVariants = cva(
     },
     variants: {
       variant: {
-        primary: "text-gray-50 primary-button relative    ",
+        primary: "text-violet-50 primary-button relative hover:text-white",
         //bg-indigo-600 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600
-        secondary:"bg-white text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50",
+        secondary:"bg-gray-white text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-white",
 
         light: 'border border-gray-200 text-gray-600 hover:shadow-base hover:border-none hover:-translate-y-[1px] hover:mb-[1px] transition-transform duration-100',
-        dark: `text-gray-50 ${styles.darkGlass} `,
+        dark: `text-gray-300 ${styles.darkGlass} hover:text-white hover:bg-gray-800`,
         flat: 'text-gray-50 bg-gray-800 hover:bg-gray-700',
         text: 'text-gray-800 hover:text-primary',
         disabled: 'text-gray-400 bg-gray-200 cursor-not-allowed',
-        glass: `text-gray-800 ${styles.glass} `  ,
+        glass: `text-gray-800 ${styles.glass} hover:bg-gray-50 hover:text-primary fill-primary`  ,
         
         link: "text-neutral-900 underline-offset-4 hover:underline dark:text-neutral-50",
         nav: 'py-[6px] px-4 rounded-full border border-[#000]/10  shadow-md bg-[#fff]/50 transition-all duration-500 hover:shadow-none hover:border-transparent hover:bg-[#fff]/0',
