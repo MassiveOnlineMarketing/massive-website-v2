@@ -26,7 +26,7 @@ const Weboplossingen = () => {
           {/* img */}
           <div className='relative'>
             <div className='mt-6 mlg:mt-0 mlg:absolute bottom-0 w-full' >
-              <CodeScreenWeb className='shadow-custom-lg rounded-[20px]' />
+              <CodeScreenWeb className='shadow-custom-lg rounded-[20px] transition ease-out hover:-translate-y-2' />
               <Paragraph size='sm' className="mt-6 max-w-[550px]"> Nieuwste webtechnologieën met onze op maat gemaakte oplossingen, die een geavanceerde en toekomstbestendige online aanwezigheid garanderen.</Paragraph>
             </div>
           </div>
@@ -71,7 +71,7 @@ const Card = ({ card }: CardProps) => {
 
 const WEBOPLOSSINGEN = {
   title: {
-    heading: "Geafanceerde Weboplossingen",
+    heading: "Geavanceerde Weboplossingen",
     subHeading: "Onze Weboplossingen VS traditionele CMS Systemen",
     paragraph: "Uw ambities verdienen een op maat gemaakte aanpak. Ons team is toegewijd aan het bieden van innovatieve oplossingen die specifiek op uw zakelijke uitdagingen zijn gericht. Laten we samen uw visie omzetten in meetbare resultaten."
   },

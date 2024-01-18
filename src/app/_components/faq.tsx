@@ -21,8 +21,8 @@ const Faq = () => {
       </Title>
       <AccordionContainer className='max-w-[750px]'>
         {FAQ.accordion.map((item, index) => (
-          <Accordion key={index} className={`${constants.glassFill} bg-white backdrop-blur-lg rounded-xl shadow-custom-lg  test-gradient relative`} >
-            <AccordionHeader level='h4' size='lg' className="rounded-lg text-gray-800 p-4 font-medium text-base text-left md:text-center" activeClassName='text-primary'>{item.header}</AccordionHeader>
+          <Accordion key={index} className={`${constants.glassFill} backdrop-blur-lg rounded-xl shadow-custom-lg  test-gradient relative`} >
+            <AccordionHeader level='h4' size='lg' className="rounded-lg text-gray-800 p-4 font-medium text-base text-left md:text-center hover:text-primary" activeClassName='text-primary'>{item.header}</AccordionHeader>
             <AccordionContent >{item.content}</AccordionContent>
           </Accordion>
         ))}

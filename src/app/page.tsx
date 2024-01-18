@@ -43,7 +43,7 @@ export default function Home() {
 
         <Image src={'/home/mesh-gradient-hero-1920x1090.jpg'} width={1920} height={1090} alt='hero background gradient' className="absolute top-0 left-0 -z-20 h-full w-full mx-auto" />
 
-        <div className="absolute -bottom-[145px] w-full ">
+        <div className="absolute -bottom-[145px] w-full">
           <Banner />
         </div>
       </div>

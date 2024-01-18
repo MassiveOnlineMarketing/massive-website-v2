@@ -33,7 +33,7 @@ const ToekomstVisie = () => {
 
 const TOEKOMST_VISIE = {
   subHeading: "Toekomstvisie en Ambities",
-  heading: "Bij Massive zijn we voordurend gericht op de toekomst. ",
+  heading: "Bij Massive zijn we voortdurend gericht op de toekomst. ",
   paragraph: "We streven ernaar om de nieuwste trends en technologieën voor te zijn. Dit zodat we onze klanten naar nieuwe hoogten van digitale uitmuntendheid kunnen leiden. Onze ambitie is om constant te innoveren en nieuwe grenzen te verkennen, samen met onze klanten en partners.",
   buttonLabel: "Neem contact op"
 }

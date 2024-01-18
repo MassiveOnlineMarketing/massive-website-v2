@@ -43,7 +43,7 @@ const SectionGesprek = () => {
 const SECTION_GESPREK = {
   subheading: "Strategisch Online Advies",
   heading: "Gratis Advies, Onbeperkte Mogelijkheden",
-  paragraph: "Niet zeker welke marketingdiensten het beste passen bij uw onderneming?Geen zorgen, onze toegewijde specialisten staan klaar om u te begeleiden. Plan een vrijblijvend gesprek in en laten wij samen kijken naar het herdefiniëren van uw online strategie.",
+  paragraph: "Niet zeker welke marketingdiensten het beste passen bij uw onderneming? Geen zorgen, onze toegewijde specialisten staan klaar om u te begeleiden. Plan een vrijblijvend gesprek in en laten wij samen kijken naar het herdefiniëren van uw online strategie.",
   list: [
     "Op Maat Gemaakt Advies",
     "Ontdek uw Digitaal Potentieel",

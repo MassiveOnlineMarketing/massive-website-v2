@@ -93,7 +93,7 @@ const MobileCard = ({ card }: CardProps) => {
 const DesktopCard = ({ card }: CardProps) => {
 
   return (
-    <div className={`px-3 pt-3 pb-4 rounded-[20px] shadow-custom-lg h-full flex flex-col ${constants.glassFill}`}>
+    <div className={`px-3 pt-3 pb-4 rounded-[20px] shadow-custom-lg h-full flex flex-col ${constants.glassFill} transition ease-out-in hover:-translate-y-2`}>
 
       <div className="w-full min-h-[214px] rounded-[12px] bg-[url('/home/diensten-card-image-background.png')] bg-right">
         <div className='flex items-center justify-center h-full w-full p-6'>
