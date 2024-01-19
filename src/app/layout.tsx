@@ -11,7 +11,6 @@ import { Providers } from './providers'
 // Cookie consent
 import LoadCookies from '@/features/cookie-consent/LoadCookies'
 import CookieConsentBanner from '@/features/cookie-consent/CookieConsentBanner'
-import Footer from '@/components/partials/Footer'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -96,10 +95,6 @@ export default function RootLayout({
         <Providers>
           {children}
         </Providers>
-
-        <div className='w-full overflow-hidden'>
-          <Footer />
-        </div>
         
 
         <LoadCookies />

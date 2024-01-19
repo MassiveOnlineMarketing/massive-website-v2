@@ -18,6 +18,7 @@ import container from "@/styles/styles";
 import { MeshGradientHero } from "./_assets";
 import Weboplossingen from "./_components/weboplossingen";
 import Intergratie from "./_components/intergratie";
+import Footer from "@/components/partials/Footer";
 
 
 
@@ -34,7 +35,7 @@ export default function Home() {
       </div>
 
       <div className="relative">
-        
+
 
         <header>
           <Navbar />
@@ -47,7 +48,7 @@ export default function Home() {
           <Banner />
         </div>
       </div>
-      
+
       <div className="h-20 mlg:h-[300px] "></div>
 
       <Weboplossingen />
@@ -71,6 +72,10 @@ export default function Home() {
       <WaarWijVoorStaan />
 
       <Faq />
+
+      <div className='w-full overflow-hidden'>
+        <Footer />
+      </div>
 
     </main>
   )
